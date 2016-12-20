@@ -6,12 +6,12 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/'
+      'npm:': 'libs/'
     },
     // map tells the System loader where to look for things
     map: {
       // our app is within the app folder
-      app: 'app',
+      app: 'static/app',
 
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
