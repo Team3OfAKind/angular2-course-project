@@ -9,12 +9,16 @@ import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+
+import {MealsService} from '../servces/meals.service';
+import {HttpService} from '../servces/http.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutModule,
     AuthModule
   ],
-  providers: [],
+  providers: [MealsService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
