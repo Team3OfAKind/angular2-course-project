@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
-import 'rxjs/add/operator/map';
+import {MealsService} from '../../servces/meals.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +10,15 @@ import 'rxjs/add/operator/map';
 export class HomeComponent implements OnInit {
   meals: any[];
 
-  constructor(private http: Http) { }
+  constructor(private service: MealsService) { 
+    this.meals = [];
+  }
 
   ngOnInit() {
-    this.http.get('http://localhost:3001/api/foods')
-      .map((res: Response) => res.json())
-      .subscribe(response => this.meals = response.result.foods);
+    this.service.getAll()
+      .subscribe(response => {
+        this.meals = response.result.meals;
+      });
   }
 
 }
