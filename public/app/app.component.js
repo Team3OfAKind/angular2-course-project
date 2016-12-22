@@ -17,16 +17,16 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/api/products')
-            .map(function (res) { return res.json(); }) // Map will change your response ot json()
-            .subscribe(function (res) { return _this.products = res['result']; });
+        this.http.get('http://localhost:3001/api/foods')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (res) { return _this.foods = res.result.foods; });
     };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "\n        <h1>Angular2: Getting Started</h1>\n        <ul>\n            <li *ngFor=\"let pr of products\">{{pr.name}}</li>\n        </ul>\n    "
+        template: "\n        <h1>Angular2: Getting Started</h1>\n        <ul>\n            <li *ngFor=\"let pr of foods\">{{pr.name}}</li>\n        </ul>\n    "
     }),
     __metadata("design:paramtypes", [http_1.Http])
 ], AppComponent);
