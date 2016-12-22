@@ -13,11 +13,15 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import {MealsService} from '../servces/meals.service';
+import {HttpService} from '../servces/http.service';
+
 import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { appRoutes } from './app.routes';
     AuthModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [MealsService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
