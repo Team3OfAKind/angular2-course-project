@@ -5,16 +5,19 @@ import { HttpModule } from '@angular/http';
 import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
 import { AuthModule } from './auth/auth.module';
+import { MenuModule } from './menu/menu.module';
+import { ContactsModule } from './contacts/contacts.module';
+//import { LoginModule } from './login/login.module';
+//import { RegisterModule } from './register/register.module';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,12 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     HomeModule,
     AboutModule,
-    AuthModule
+    MenuModule,
+    ContactsModule,
+    //LoginModule,
+    //RegisterModule,
+    AuthModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
