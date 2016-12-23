@@ -42,4 +42,8 @@ export class CartComponent implements OnInit {
     });
   }
 
+  removeFromCart(index) {
+    this.cartProducts.splice(index, 1);
+  }
+
 }

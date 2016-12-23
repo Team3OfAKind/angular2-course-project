@@ -1,11 +1,11 @@
 <p>
   cart works!
 </p>
-<div *ngFor="let product of cartProducts">
+<div *ngFor="let product of cartProducts; let i = index">
     <img src="{{product.image}}" alt="product.name">
     <div class="product-info">
     <strong>{{product.name}}</strong>
-    <button>Remove from cart</button>
+    <button (click)="removeFromCart(i)">Remove from cart</button>
     <p>{{product.price}}</p>
     <p>Quantity: {{product.quantity}}</p>
     </div>
