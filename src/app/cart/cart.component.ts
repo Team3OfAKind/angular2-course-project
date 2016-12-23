@@ -43,6 +43,9 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(index) {
+    const product = this.cartProducts[index]
+    this.totalPrice -= product.price * product.quantity;
+    this.totalPrice = +this.totalPrice.toFixed(2);
     this.cartProducts.splice(index, 1);
   }
 
