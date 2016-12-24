@@ -1,0 +1,23 @@
+.main-container{
+    margin-top: 100px;
+}
+
+img{
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul li{
+    margin-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.meal-info{
+    display: inline-block;
+    margin-left: 10px;
+}
