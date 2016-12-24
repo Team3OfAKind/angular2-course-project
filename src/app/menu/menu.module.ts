@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu.component';
+import { SearchPipe } from '../../pipes/search.pipe';
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    SearchPipe
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
   exports: [],
   providers: []
 })

@@ -1,28 +1,29 @@
-
 <div class="container main-container">
 
   <div class="col-md-4">
-      <ul>
-        <li *ngFor="let category of categories">{{category}}</li>
-      </ul>
+    <ul>
+      <li *ngFor="let category of categories">{{category}}</li>
+    </ul>
   </div>
 
 
   <div class="col-md-8">
 
-      <input [(ngModel)]="searchWord" placeholder="Search..."/>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="searchWord" placeholder="Search..." />
+    </div>
 
-      <ul>
-        <li *ngFor="let meal of meals | search(searchWord)" class="container">
-          <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
-          <div class="meal-info">
-            <strong>{{meal.name}}</strong>
-            <p>{{meal.description}}</p>
-            <p class="lead">{{meal.price}}</p>
-            <button class="btn btn-danger">Add to cart</button>
-            <button class="btn btn-success">Like</button>
-          </div>
-        </li>
-      </ul>
+    <ul>
+      <li *ngFor="let meal of meals | search:searchWord" class="container">
+        <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
+        <div class="meal-info">
+          <strong>{{meal.name}}</strong>
+          <p>{{meal.description}}</p>
+          <p class="lead">{{meal.price}}</p>
+          <button class="btn btn-danger">Add to cart</button>
+          <button class="btn btn-success">Like</button>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
