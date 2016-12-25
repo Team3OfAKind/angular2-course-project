@@ -1,17 +1,14 @@
-<p>
-  cart works!
-</p>
 <div *ngFor="let product of cartProducts; let i = index">
     <img src="{{product.image}}" alt="product.name">
     <div class="product-info">
-    <strong>{{product.name}}</strong>
-    <button (click)="removeFromCart(i)">Remove from cart</button>
-    <p>{{product.price}}</p>
-    <p>Quantity: {{product.quantity}}</p>
+        <strong>{{product.name}}</strong>
+        <button (click)="removeFromCart(i)">Remove from cart</button>
+        <p>{{product.price}}</p>
+        <p>Quantity: {{product.quantity}}</p>
     </div>
 </div>
 <div>
-  <p>Total price: {{totalPrice}}</p>
+    <p>Total price: {{totalPrice}}</p>
 </div>
 <button>Submit order</button>
 <br>

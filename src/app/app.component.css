@@ -60,8 +60,7 @@ section::after {
     -o-background-size: 25px 100%;
     background-size: 25px 100%;
     top: 0;
-    background-image: linear-gradient(315deg, #FFF 50%, transparent 50%), linear-gradient(45deg, #FFF 50%, transparent 50%);
-    margin-top: -30px;
+    margin-top: 0px;
     z-index: 100;
 }
 
@@ -74,7 +73,6 @@ section::after {
     -o-background-size: 25px 100%;
     background-size: 25px 100%;
     top: 0;
-    background-image: linear-gradient(583deg, #FFF 50%, transparent 50%), linear-gradient(136deg, #FFF 50%, transparent 50%);
     margin-top: 0px;
     z-index: 100;
 }
@@ -84,25 +82,21 @@ section::after {
     02. Header 
 ========================================================================== */
 
-header{
+header {
     z-index: 10;
 }
 
 #header {
-    background-image: url(../img/night.jpg);
-    -webkit-background-size: /*@@prefixmycss->No equivalent*/
-    ;
+    background: url('../assets/images/6926163-entree-restaurant-photo.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: /*@@prefixmycss->No equivalent*/
-    ;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
 .bg-overlay {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -134,7 +128,6 @@ header{
     font-weight: bold;
     display: inline-block;
     background: #c19b62;
-    padding: 0px 18px;
 }
 
 #header .subtitle h4 {
@@ -499,10 +492,7 @@ fieldset[disabled] .form-control {
     color: white;
     font-size: 14px;
     font-weight: bold;
-}
-
-.dark-wrapper .ss-style-top::before {
-    background-image: linear-gradient(315deg, #c19b62 50%, transparent 50%), linear-gradient(45deg, #c19b62 50%, transparent 50%);
+    height: 200px;
 }
 
 .social-bar {
