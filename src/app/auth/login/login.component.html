@@ -1,5 +1,6 @@
-<div class="modal-dialog">
-    <div class="loginmodal-container">
+<!--<div class="modal-dialog">-->
+    <!--<div class="loginmodal-container">-->
+    <div class="container-fluid">
         <h1>Login to Your Account</h1><br>
         <form [formGroup]="userToLogin" #loginForm="ngForm" class="login-form" (ngSubmit)="login()">
             <div class="col-md-4 col-sm-4 col-lg-4" [ngClass]="{'has-error':!userToLogin.controls['username'].valid}">
@@ -18,4 +19,4 @@
         </form>
         <simple-notifications [options]="options "></simple-notifications>
     </div>
-</div>
+<!--</div>-->

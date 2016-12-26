@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../../servces/auth.service';
-import { NotificationsService } from '../../../../node_modules/angular2-notifications';
+import { NotificationsService } from 'angular2-notifications';
 import { Router } from '@angular/router';
 
 

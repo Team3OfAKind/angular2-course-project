@@ -1,11 +1,24 @@
-<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <div class="container-fluid">
     <form [formGroup]="userToRegister" #registrationForm="ngForm" class="register-form" (ngSubmit)="register(); registrationForm.reset()">
         <div class="row">
             <div class="col-md-4 col-sm-4 col-lg-4" [ngClass]="{'has-error':!userToRegister.controls['username'].valid}">
-                <label for="username">Name</label>
+                <label for="username">Username</label>
                 <input name="username" class="form-control" type="text" formControlName="username">
                 <span class="text-danger" *ngIf="!userToRegister.controls['username'].valid && userToRegister.controls['username'].touched">Username must be between 5 and 15 symbols.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-lg-4" [ngClass]="{'has-error':!userToRegister.controls['firstName'].valid}">
+                <label for="firstName">First Name</label>
+                <input name="firstName" class="form-control" type="text" formControlName="firstName">
+                <span class="text-danger" *ngIf="!userToRegister.controls['firstName'].valid && userToRegister.controls['firstName'].touched">First name must be between 5 and 15 symbols.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-lg-4" [ngClass]="{'has-error':!userToRegister.controls['lastName'].valid}">
+                <label for="lastName">Last Name</label>
+                <input name="lastName" class="form-control" type="text" formControlName="lastName">
+                <span class="text-danger" *ngIf="!userToRegister.controls['lastName'].valid && userToRegister.controls['lastName'].touched">Username must be between 5 and 15 symbols.</span>
             </div>
         </div>
         <div class="row ">
@@ -37,4 +50,4 @@
         </div>
     </form>
     <simple-notifications [options]="options "></simple-notifications>
-</div>-->
+</div>

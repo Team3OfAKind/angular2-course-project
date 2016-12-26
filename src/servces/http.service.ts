@@ -7,7 +7,7 @@ export class HttpService{
     private host: string;
 
     constructor(private http: Http) {
-        this.host = "http://localhost:3001/";
+        this.host = "http://localhost:3001/api/";
     }
 
     get(url:string){

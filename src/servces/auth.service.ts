@@ -7,6 +7,7 @@ const RegisterUrl = 'http://localhost:3001/api/auth/register';
 const LoginUrl = 'http://localhost:3001/api/auth/login';
 const GetLoggedUserUrl = 'http://localhost:3001/api/auth/getLoggedUser';
 const AuthToken = 'auth_token';
+const Username = 'user_username';
 
 @Injectable()
 export class AuthService {
@@ -20,6 +21,7 @@ export class AuthService {
     register(userToRegister: Object): Observable<any> {
         return this._http.post(RegisterUrl, userToRegister)
             .map((res: Response) => {
+                console.log(res.json());
                 return { status: res.status, body: res.json() };
             });
     }
@@ -27,9 +29,11 @@ export class AuthService {
     login(userToLogin: Object): Observable<any> {
         return this._http.post(LoginUrl, userToLogin)
             .map((res: Response) => {
+                console.log(res.json());
                 let body = res.json();
                 let token = body.token;
-                localStorage.setItem(AuthToken, token);
+                localStorage.setItem(AuthToken, body.user.token);
+                localStorage.setItem(Username, body.user.username);
                 return { status: res.status, body: body };
             });
     }

@@ -6,7 +6,7 @@ export class MealsService{
     private route: string;
 
     constructor(private httpService: HttpService) {
-        this.route = "api/meals";
+        this.route = "meals";
     }
 
     getAll(){
