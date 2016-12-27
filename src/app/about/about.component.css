@@ -1,0 +1,48 @@
+#header {
+    background: url('../../assets/images/Food-Blog.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.parallax.parallax2 {
+    background-image: url('../../assets/images/AAEAAQAAAAAAAAZVAAAAJDE2ZTc1NWY1LWZhOWYtNDlmOC05N2JhLTlmNzQzOWQxNTk3Yg.jpg');
+}
+
+#header .content h2 {
+    font-family: Impact, Charcoal, sans-serif;
+    text-align: center;
+    background-color: rgba(54, 65, 76, 0.6);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    -moz-box-shadow-bottom: 4px 4px 4px rgb(54, 65, 76);
+    -webkit-box-shadow-bottom: 4px 4px 4px rgb(54, 65, 76);
+    box-shadow: 4px 4px 4px rgb(54, 65, 76);
+    padding: 5%;
+}
+
+hr {
+    color: black;
+}
+
+#header .content p {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.icon-wrapper {
+    height: 80px;
+}
+
+.icon-wrapper i {
+    font-size: 70px;
+}
+
+.col-wrapper .icon-border,
+h4,
+p {
+    color: black;
+}
