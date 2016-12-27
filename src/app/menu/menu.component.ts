@@ -51,7 +51,7 @@ export class MenuComponent implements OnInit {
     this.UserService.addMealToCart(mealToAdd)
     .subscribe((res) => {
       console.log(res.result.message)
-      this._notification.success('', 'Meal added to cart!');
+      this._notification.success('', 'res.result.message');  //Not working
     });
   }
 }

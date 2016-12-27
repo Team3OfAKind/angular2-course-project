@@ -34,6 +34,10 @@ export class CartComponent implements OnInit {
     this.totalPrice -= mealPrice * +meal.quantity;
     this.totalPrice = +this.totalPrice.toFixed(2);
     this.cartMeals.splice(index, 1);
+    this.UserService.removeMealFromCart(meal)
+      .subscribe((res) => {
+        console.log(res.result.message)
+      });
   }
 
 }
