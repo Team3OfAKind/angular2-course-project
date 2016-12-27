@@ -17,11 +17,13 @@ export class HttpService{
     }
 
     put(url:string, body){
+        console.log(`put: ${this.host}${url}`);
         return this.http.put(`${this.host}${url}`, body)
             .map((res:Response) => res.json());
     }
 
     post(url:string, body){
+        console.log(`post: ${this.host}${url}`);
         return this.http.post(`${this.host}${url}`, body)
             .map((res:Response) => res.json());
     }

@@ -14,13 +14,13 @@
     </div>
 
     <ul>
-      <li *ngFor="let meal of meals | search:searchWord" class="container">
+      <li *ngFor="let meal of meals | search:searchWord; let i = index" class="container">
         <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
         <div class="meal-info">
           <strong>{{meal.name}}</strong>
           <p>{{meal.description}}</p>
           <p class="lead">{{meal.price}}</p>
-          <button class="btn btn-danger">Add to cart</button>
+          <button class="btn btn-danger" (click)="addToCart(i)">Add to cart</button>
           <button class="btn btn-success">Like</button>
         </div>
       </li>

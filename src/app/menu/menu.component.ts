@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MealsService } from '../../services/meals.service';
+import { UserService } from '../../services/user.service';
 import { Meal } from '../../models/meal-model';
 
 @Component({
@@ -18,7 +19,7 @@ export class MenuComponent implements OnInit {
   sortType: string;
   sortOrder: string;
 
-  constructor(private mealsService: MealsService) {
+  constructor(private mealsService: MealsService, private UserService: UserService) {
     this.sortTypes = ['SortBy', 'Price', 'Name'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
@@ -42,6 +43,11 @@ export class MenuComponent implements OnInit {
           this.categories.push(x.category);
         });
       });
+  }
+
+  addToCart(index) {
+    const mealToAdd = this.meals[index];
+    this.UserService.addMealToCart(mealToAdd);
   }
 
 }

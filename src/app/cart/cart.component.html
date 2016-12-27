@@ -1,5 +1,5 @@
 <div *ngFor="let product of cartProducts; let i = index">
-    <img src="{{product.image}}" alt="product.name">
+    <img src="{{product.imageLink}}" alt="product.name">
     <div class="product-info">
         <strong>{{product.name}}</strong>
         <button class="btn btn-danger" (click)="removeFromCart(i)">Remove from cart</button>

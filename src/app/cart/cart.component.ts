@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { ICartProduct } from '../../models/cart-product-model'
+import { ICartMeal } from '../../models/cart-meal-model'
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +9,7 @@ import { ICartProduct } from '../../models/cart-product-model'
 })
 export class CartComponent implements OnInit {
 
-  cartProducts: ICartProduct[] = [];
+  cartMeals: ICartMeal[] = [];
   totalPrice: number = 0;
   constructor(private UserService: UserService) { 
 
@@ -17,13 +17,13 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.UserService);
-    this.UserService.getCartProducts()
+    this.UserService.getCartMeals()
       .subscribe(res => {
         console.log(res);
-        this.cartProducts = res.result.products;
+        this.cartMeals = res.result.products;
       })
       
-    this.cartProducts.forEach(product => {
+    this.cartMeals.forEach(product => {
       this.totalPrice += product.price * product.quantity;
     });
     // {
@@ -47,10 +47,10 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(index) {
-    const product = this.cartProducts[index]
-    this.totalPrice -= product.price * product.quantity;
+    const meal = this.cartMeals[index];
+    this.totalPrice -= meal.price * meal.quantity;
     this.totalPrice = +this.totalPrice.toFixed(2);
-    this.cartProducts.splice(index, 1);
+    this.cartMeals.splice(index, 1);
   }
 
 }

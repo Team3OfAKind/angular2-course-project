@@ -13,7 +13,12 @@ export class UserService{
         this.route = `users/${this.username}`;
     }
 
-    getCartProducts(){
+    getCartMeals(){
         return this.httpService.get(this.route + '/cart');
+    }
+
+    addMealToCart(meal) {
+        meal.quantity = 1;
+        return this.httpService.put(this.route + '/cart', meal);
     }
 }
