@@ -16,15 +16,15 @@ export class MenuComponent implements OnInit {
   sortOrders: string[];
 
   searchWord: string;
-  currentCategory: string;
+  // category: 'All';
   sortType: string;
   sortOrder: string;
 
   constructor(private mealsService: MealsService, private UserService: UserService, private _notification: NotificationsService) {
-    this.sortTypes = ['SortBy', 'Price', 'Name'];
+    this.sortTypes = ['SortBy', 'Price', 'Name', 'Likes'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
-    this.currentCategory = 'All';
+    // this.currentCategory = 'All';
     this.sortType = this.sortTypes[0];
     this.sortOrder = this.sortOrders[0];
   }

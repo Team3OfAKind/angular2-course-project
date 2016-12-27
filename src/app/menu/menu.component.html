@@ -1,9 +1,20 @@
 <div class="container main-container">
 
   <div class="col-md-4">
-    <ul>
-      <li *ngFor="let category of categories">{{category}}</li>
-    </ul>
+    <form>
+      <div>
+      <label for="all">
+        <input type="radio" [(ngModel)]="category" name="filterCategory" id="all" value="All" checked="checked"/>
+        <span>All</span>
+      </label>
+      </div>
+      <div *ngFor="let current of categories; let i = index" >
+      <label [for]="i">
+        <input type="radio" [(ngModel)]="category" name="filterCategory" [id]="i" [value]="current">
+        <span>{{current}}</span>
+      </label>
+      </div>
+    </form>
   </div>
 
 
@@ -14,7 +25,7 @@
     </div>
 
     <ul>
-      <li *ngFor="let meal of meals | search:searchWord; let i = index" class="container">
+      <li *ngFor="let meal of meals | filterByCategory:category | search:searchWord; let i = index" class="container">
         <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
         <div class="meal-info">
           <strong>{{meal.name}}</strong>
