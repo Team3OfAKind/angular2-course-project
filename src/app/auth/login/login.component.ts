@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
   login(): void {
     this._authService.login(this.userToLogin.value)
       .subscribe((res: any) => {
-        this._notification.success('', res.body.message);
+        console.log('in log in');
+        this._notification.success('', res.message);
         setTimeout(() => this._router.navigateByUrl('/home'), 2500);
 
       });
