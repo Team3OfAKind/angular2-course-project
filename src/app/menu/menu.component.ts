@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MealsService } from '../../services/meals.service';
 import { UserService } from '../../services/user.service';
 import { Meal } from '../../models/meal-model';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-menu',
@@ -19,7 +20,7 @@ export class MenuComponent implements OnInit {
   sortType: string;
   sortOrder: string;
 
-  constructor(private mealsService: MealsService, private UserService: UserService) {
+  constructor(private mealsService: MealsService, private UserService: UserService, private _notification: NotificationsService) {
     this.sortTypes = ['SortBy', 'Price', 'Name'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
@@ -47,7 +48,10 @@ export class MenuComponent implements OnInit {
 
   addToCart(index) {
     const mealToAdd = this.meals[index];
-    this.UserService.addMealToCart(mealToAdd);
+    this.UserService.addMealToCart(mealToAdd)
+    .subscribe((res) => {
+      console.log(res.result.message)
+      this._notification.success('', 'Meal added to cart!');
+    });
   }
-
 }

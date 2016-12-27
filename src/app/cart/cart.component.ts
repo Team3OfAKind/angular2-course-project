@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
         this.cartMeals.forEach(meal => {
           const mealPrice = +meal.price.substring(0, meal.price.indexOf(' lv'));
           this.totalPrice += mealPrice * +meal.quantity;
+          this.totalPrice = +this.totalPrice.toFixed(2);
         });
       })
   }

@@ -19,8 +19,8 @@ export class UserService{
 
     addMealToCart(meal) {
         meal.quantity = 1;
-        const mealJSON = JSON.stringify(meal);
-        console.log(mealJSON);
-        return this.httpService.post(this.route + '/cart', mealJSON);
+        //const mealJSON = JSON.stringify(meal);
+        //console.log(mealJSON);
+        return this.httpService.post(this.route + '/cart', meal);
     }
 }
