@@ -16,39 +16,21 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.UserService);
     this.UserService.getCartMeals()
       .subscribe(res => {
-        console.log(res);
-        this.cartMeals = res.result.products;
+        this.cartMeals = res.result.meals;
+
+        this.cartMeals.forEach(meal => {
+          const mealPrice = +meal.price.substring(0, meal.price.indexOf(' lv'));
+          this.totalPrice += mealPrice * +meal.quantity;
+        });
       })
-      
-    this.cartMeals.forEach(product => {
-      this.totalPrice += product.price * product.quantity;
-    });
-    // {
-      //   name: 'Люто – Кисела Супа',
-      //   price: 4.99,
-      //   quantity: 1,
-      //   image: 'http://bgmenu.com/upload/meal/6197/hotandsoursoup2.jpg'
-      // },
-      // {
-      //   name: 'Домати с Индийско Сирене – Капрезе',
-      //   price: 5.99,
-      //   quantity: 3,
-      //   image: 'http://bgmenu.com/upload/meal/100309/domati_indiiskosirene1.jpg'
-      // },
-      // {
-      //   name: 'Пиле До Пияза',
-      //   price: 15.99,
-      //   quantity: 2,
-      //   image: 'http://bgmenu.com/upload/meal/6227/chickendopiaza1.jpg'
-      // }
   }
 
   removeFromCart(index) {
     const meal = this.cartMeals[index];
-    this.totalPrice -= meal.price * meal.quantity;
+    const mealPrice = +meal.price.substring(0, meal.price.indexOf(' lv'));
+    this.totalPrice -= mealPrice * +meal.quantity;
     this.totalPrice = +this.totalPrice.toFixed(2);
     this.cartMeals.splice(index, 1);
   }

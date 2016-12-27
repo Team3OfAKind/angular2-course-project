@@ -1,6 +1,6 @@
 export interface ICartMeal {
     name: string
-    price: number
-    quantity: number,
+    price: string
+    quantity: string,
     imageLink: string;
 }
