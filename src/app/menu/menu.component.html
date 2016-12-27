@@ -1,20 +1,18 @@
 <div class="container main-container">
 
   <div class="col-md-4">
-    <form>
-      <div>
+    <div>
       <label for="all">
-        <input type="radio" [(ngModel)]="category" name="filterCategory" id="all" value="All" checked="checked"/>
+        <input type="radio" [(ngModel)]="category" name="category" id="all" value="All" checked="checked"/>
         <span>All</span>
       </label>
-      </div>
-      <div *ngFor="let current of categories; let i = index" >
+    </div>
+    <div *ngFor="let current of categories; let i = index">
       <label [for]="i">
-        <input type="radio" [(ngModel)]="category" name="filterCategory" [id]="i" [value]="current">
+        <input type="radio" [(ngModel)]="category" name="category" [id]="i" [value]="current">
         <span>{{current}}</span>
       </label>
-      </div>
-    </form>
+    </div>
   </div>
 
 
@@ -24,8 +22,19 @@
       <input type="text" [(ngModel)]="searchWord" placeholder="Search..." />
     </div>
 
+    <div class="form-group">
+      <label for="sort-type">Sort by</label>
+      <select class="form-control" id="sort-type" [(ngModel)]="sortType">
+        <option *ngFor="let type of sortTypes" [value]="type">{{type}}</option>
+      </select>
+      <label for="sort-order">Order in</label>
+      <select class="form-control" id="sort-order" [(ngModel)]="sortOrder">
+        <option *ngFor="let order of sortOrders" [value]="order">{{order}}</option>
+      </select>
+    </div>
+
     <ul>
-      <li *ngFor="let meal of meals | filterByCategory:category | search:searchWord; let i = index" class="container">
+      <li *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder; let i = index" class="container">
         <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
         <div class="meal-info">
           <strong>{{meal.name}}</strong>

@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu.component';
 import { SearchPipe } from '../../pipes/search.pipe';
 import { FilterByCategoryPipe } from '../../pipes/filterByCategory.pipe';
+import { SortPipe } from '../../pipes/sort.pipe';
 
 @NgModule({
   declarations: [
     MenuComponent,
     SearchPipe,
-    FilterByCategoryPipe
+    FilterByCategoryPipe,
+    SortPipe
   ],
   imports: [
     CommonModule,

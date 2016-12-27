@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
   sortOrder: string;
 
   constructor(private mealsService: MealsService, private UserService: UserService, private _notification: NotificationsService) {
-    this.sortTypes = ['SortBy', 'Price', 'Name', 'Likes'];
+    this.sortTypes = ['Name', 'Price', 'Likes'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
     // this.currentCategory = 'All';
@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
         this.categories = [];
 
         // TODO: Optimize this!!
-        
+
         this.meals.forEach(x => {
           if (this.categories.indexOf(x.category) >= 0) {
             return;
@@ -49,9 +49,9 @@ export class MenuComponent implements OnInit {
   addToCart(index) {
     const mealToAdd = this.meals[index];
     this.UserService.addMealToCart(mealToAdd)
-    .subscribe((res) => {
-      console.log(res.result.message)
-      this._notification.success('', 'res.result.message');  //Not working
-    });
+      .subscribe((res) => {
+        console.log(res.result.message)
+        this._notification.success('', 'res.result.message');  //Not working
+      });
   }
 }

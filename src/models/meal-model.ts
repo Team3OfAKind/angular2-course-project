@@ -4,4 +4,5 @@ export interface Meal{
     imageLink: string;
     description: string;
     category: string;
+    likes: number;
 }
