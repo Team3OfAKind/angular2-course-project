@@ -14,8 +14,9 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import {MealsService} from '../servces/meals.service';
-import {HttpService} from '../servces/http.service';
+import {MealsService} from '../services/meals.service';
+import {HttpService} from '../services/http.service';
+import {UserService} from '../services/user.service';
 
 import { appRoutes } from './app.routes';
 
@@ -37,7 +38,7 @@ import { appRoutes } from './app.routes';
     AuthModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MealsService, HttpService],
+  providers: [MealsService, HttpService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
     <img src="{{product.image}}" alt="product.name">
     <div class="product-info">
         <strong>{{product.name}}</strong>
-        <button (click)="removeFromCart(i)">Remove from cart</button>
+        <button class="btn btn-danger" (click)="removeFromCart(i)">Remove from cart</button>
         <p>{{product.price}}</p>
         <p>Quantity: {{product.quantity}}</p>
     </div>
@@ -10,6 +10,6 @@
 <div>
     <p>Total price: {{totalPrice}}</p>
 </div>
-<button>Submit order</button>
+<button class="btn btn-success">Submit order</button>
 <br>
 <br>

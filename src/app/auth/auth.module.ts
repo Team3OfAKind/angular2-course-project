@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthService } from '../../servces/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { SimpleNotificationsModule, NotificationsService } from '../../../node_modules/angular2-notifications';
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http, Response} from '@angular/http';
-import {MealsService} from '../../servces/meals.service';
+import {MealsService} from '../../services/meals.service';
 
 @Component({
   selector: 'app-home',
