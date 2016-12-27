@@ -7,10 +7,12 @@ import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
+import {AuthGaurd} from '../gaurds/auth.gaurd';
+
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'menu', component: MenuComponent },
+    { path: 'menu', component: MenuComponent}, //, canActivate:[AuthGaurd] },
     { path: 'about', component: AboutComponent },
     { path: 'cart', component: CartComponent },
     { path: 'contacts', component: ContactsComponent },

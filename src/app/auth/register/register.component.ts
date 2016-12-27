@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     this._authService
       .register(this.userToRegister.value)
       .subscribe((res: any) => {
-        this._notification.success('', res.body.message);
+        this._notification.success('', res.message);
         setTimeout(() => this._router.navigateByUrl('/login'), 2500);
       },
       (err: any) => {

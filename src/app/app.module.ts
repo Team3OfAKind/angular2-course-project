@@ -17,6 +17,9 @@ import { AppComponent } from './app.component';
 import {MealsService} from '../services/meals.service';
 import {HttpService} from '../services/http.service';
 import {UserService} from '../services/user.service';
+import {StorageService} from '../services/storage.service';
+
+import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 import { appRoutes } from './app.routes';
 
@@ -38,7 +41,12 @@ import { appRoutes } from './app.routes';
     AuthModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MealsService, HttpService, UserService],
+  providers: [
+    MealsService, 
+    HttpService, 
+    UserService,
+    StorageService,
+    AuthGaurd],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
