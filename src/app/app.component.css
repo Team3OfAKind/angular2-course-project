@@ -87,7 +87,7 @@ header {
 }
 
 #header {
-    background: url('../assets/images/6926163-entree-restaurant-photo.jpg') no-repeat center center fixed;
+    background: url('../assets/images/online-food-ordering.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -106,50 +106,21 @@ header {
     z-index: 0;
 }
 
-#header .center {
-    position: relative;
-    z-index: 1;
-    color: white;
+#header .content {
+    padding: 15%;
 }
 
-#header .bottom {
-    color: white;
-}
-
-#header .center .slogan {
-    font-size: 26px;
-    text-transform: uppercase;
-}
-
-#header .banner h1 {
-    font-size: 100px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: inline-block;
-    background: #c19b62;
-}
-
-#header .subtitle h4 {
-    display: inline-block;
-    background: white;
-    color: #c19b62;
-    font-size: 38px;
-    padding: 0px 15px;
-}
-
-#header .bottom {
+#header .content h2 {
+    font-family: Impact, Charcoal, sans-serif;
     text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 30px;
-}
-
-#header .bottom a {
-    font-size: 36px;
-    color: whitesmoke;
-    position: relative;
-    top: -5px;
+    background-color: rgba(54, 65, 76, 0.6);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    -moz-box-shadow-bottom: 4px 4px 4px rgb(54, 65, 76);
+    -webkit-box-shadow-bottom: 4px 4px 4px rgb(54, 65, 76);
+    box-shadow: 4px 4px 4px rgb(54, 65, 76);
+    padding: 5%;
 }
 
 
@@ -184,13 +155,9 @@ header {
 
 .navbar-inverse .navbar-nav>li>a:hover,
 .navbar-inverse .navbar-nav>.active>a {
-    background: #c19b62;
+    background-color: #5383D3;
     color: white;
     text-shadow: none;
-}
-
-.login {
-    margin-left: 200px;
 }
 
 
@@ -232,7 +199,7 @@ header {
 .lead:after {
     position: absolute;
     content: ' ';
-    background: #c19b62;
+    background-color: #5383D3;
     width: 80px;
     height: 3px;
     bottom: -22px;
@@ -273,7 +240,7 @@ header {
 }
 
 .parallax.parallax2 {
-    background-image: url(../img/parallax2.jpg);
+    background-image: url('../assets/images/home-background.jpg');
 }
 
 .bm10 {
@@ -320,7 +287,7 @@ header {
 
 .menu-titles h1 {
     text-shadow: none;
-    color: #c19b62;
+    color: #4b57d8;
     text-align: center;
     margin: 0 auto;
     padding-top: 30px;
@@ -365,7 +332,7 @@ header {
 }
 
 .br-red {
-    background-color: #c19b62 !important;
+    background-color: #4b57d8 !important;
 }
 
 .br-lblue {
@@ -487,41 +454,158 @@ fieldset[disabled] .form-control {
     10. Footer 
 ========================================================================== */
 
-.dark-wrapper {
-    background: #c19b62;
-    color: white;
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/* In our demo, the footers are fixed to the bottom of the page */
+
+footer {
+    bottom: 0;
+}
+
+@media (max-height:800px) {
+    footer {
+        position: static;
+    }
+}
+
+.footer-distributed {
+    background-color: rgba(33, 45, 57, 0.9);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+    width: 40%;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 30%;
+}
+
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #5383d3;
+    text-decoration: none;
+    ;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+    width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
     font-size: 14px;
     font-weight: bold;
-    height: 200px;
+    margin-bottom: 20px;
 }
 
-.social-bar {
-    width: 100%;
-    text-align: right;
+.footer-distributed .footer-icons {
+    margin-top: 25px;
 }
 
-.social-bar a {
+.footer-distributed .footer-icons a {
     display: inline-block;
-    margin-right: 11px;
-    font-size: 2.15em;
-    text-decoration: none;
-    color: #fff;
-    opacity: 1;
-    filter: alpha(opacity=100);
-    -webkit-transition: opacity 350ms ease;
-    -moz-transition: opacity 350ms ease;
-    -o-transition: opacity 350ms ease;
-    transition: opacity 350ms ease;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
 }
 
-.social-bar a:hover {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-}
 
-.themeBy {
-    color: #c19b62;
-    background: white;
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+    .footer-distributed {
+        font: bold 14px sans-serif;
+    }
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
 }
 
 
