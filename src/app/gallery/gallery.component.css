@@ -1,0 +1,11 @@
+.gallery{
+    background: darkgray;
+}
+
+img{
+    height: 200px;
+    border: 10px solid white;
+    border-bottom: 20px solid white;
+    margin: 5px;
+    
+}
