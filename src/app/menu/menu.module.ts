@@ -5,6 +5,7 @@ import { MenuComponent } from './menu.component';
 import { SearchPipe } from '../../pipes/search.pipe';
 import { FilterByCategoryPipe } from '../../pipes/filterByCategory.pipe';
 import { SortPipe } from '../../pipes/sort.pipe';
+import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifications';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,10 @@ import { SortPipe } from '../../pipes/sort.pipe';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SimpleNotificationsModule
   ],
   exports: [],
-  providers: []
+  providers: [NotificationsService]
 })
 export class MenuModule { }

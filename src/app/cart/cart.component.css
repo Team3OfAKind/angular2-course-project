@@ -1,8 +1,16 @@
 img {
-    width: 150px;
+    height: 120px;
     display: inline-block;
 }
 
 .product-info {
     display: inline-block;
+}
+
+input[type=number] {
+    width: 45px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
 }

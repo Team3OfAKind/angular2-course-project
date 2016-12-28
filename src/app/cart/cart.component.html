@@ -4,7 +4,11 @@
         <strong>{{product.name}}</strong>
         <button class="btn btn-danger" (click)="removeFromCart(i)">Remove from cart</button>
         <p>{{product.price}}</p>
-        <p>Quantity: {{product.quantity}}</p>
+        <p>
+            Quantity: {{product.quantity}}
+            <input type="number" name="quantity" [value]="product.quantity" (change)="updateQuantity($event, i)" min="1" max="999">
+        </p>
+        <simple-notifications [options]="options "></simple-notifications>
     </div>
 </div>
 <div>

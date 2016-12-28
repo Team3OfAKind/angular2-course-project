@@ -17,11 +17,13 @@ import {HttpService} from '../services/http.service';
 import {UserService} from '../services/user.service';
 import {StorageService} from '../services/storage.service';
 import {LoadingAnimateService} from '../services/loading.service';
+import {InfoService} from '../services/info.service';
 
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 import { appRoutes } from './app.routes';
 import { LoadingAnimateModule } from './animations/animation.module';
+import { GalleryModule } from './gallery/gallery.module';
 
 @NgModule({
   declarations: [
@@ -36,19 +38,20 @@ import { LoadingAnimateModule } from './animations/animation.module';
     MenuModule,
     ContactsModule,
     CartModule,
-    //LoginModule,
-    //RegisterModule,
     AuthModule,
     RouterModule.forRoot(appRoutes),
-    LoadingAnimateModule
+    LoadingAnimateModule,
+    GalleryModule
   ],
   providers: [
     MealsService, 
     HttpService, 
     UserService,
     StorageService,
+    InfoService,
     AuthGaurd,
-    LoadingAnimateService],
+    LoadingAnimateService,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
