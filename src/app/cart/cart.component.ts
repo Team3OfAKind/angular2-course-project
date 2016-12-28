@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
         this.cartMeals = res.result.meals;
 
         this.cartMeals.forEach(meal => {
-          const mealPrice = +meal.price.substring(0, meal.price.indexOf(' lv'));
+          const mealPrice = +meal.price.split(' ')[0];
           this.totalPrice += mealPrice * +meal.quantity;
           this.totalPrice = +this.totalPrice.toFixed(2);
         });
@@ -35,12 +35,25 @@ export class CartComponent implements OnInit {
 
   removeFromCart(index) {
     const meal = this.cartMeals[index];
-    const mealPrice = +meal.price.substring(0, meal.price.indexOf(' lv'));
+    const mealPrice = +meal.price.split(' ')[0];
     this.totalPrice -= mealPrice * +meal.quantity;
     this.totalPrice = +this.totalPrice.toFixed(2);
     this.cartMeals.splice(index, 1);
     this.UserService.removeMealFromCart(meal)
       .subscribe((res) => {
+        this._notification.success('', res.result.message);
+      });
+  }
+
+  updateQuantity(event, index) {
+    const meal = this.cartMeals[index];
+    const changeBy = event.target.value - +meal.quantity;
+    this.UserService.updateMealCartQuantity(meal.name, changeBy)
+      .subscribe((res) => {
+        meal.quantity = event.target.value;
+        this.totalPrice += +meal.price.split(' ')[0] * changeBy;
+        this.totalPrice = +this.totalPrice.toFixed(2);
+        
         this._notification.success('', res.result.message);
       });
   }

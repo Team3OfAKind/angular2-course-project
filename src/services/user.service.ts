@@ -21,6 +21,10 @@ export class UserService{
         return this.httpService.post(this.route + '/add', meal);
     }
 
+    updateMealCartQuantity(name, changeBy) {
+        return this.httpService.post(this.route + '/update', {name, changeBy});
+    }
+
     removeMealFromCart(meal) {
         return this.httpService.post(this.route + '/remove', meal);
     }
