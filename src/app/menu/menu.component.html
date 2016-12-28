@@ -40,7 +40,7 @@
           <strong>{{meal.name}}</strong>
           <p>{{meal.description}}</p>
           <p class="lead">{{meal.price}}</p>
-          <button class="btn btn-danger" (click)="addToCart(i)">Add to cart</button>
+          <button class="btn btn-danger" (click)="addToCart(meal._id)">Add to cart</button>
           <button class="btn btn-success">Like</button>
         </div>
       </li>

@@ -46,8 +46,8 @@ export class MenuComponent implements OnInit {
       });
   }
 
-  addToCart(index) {
-    const mealToAdd = this.meals[index];
+  addToCart(id) {
+    const mealToAdd = this.meals.find(x => x._id == id);
     this.UserService.addMealToCart(mealToAdd)
       .subscribe((res) => {
         console.log(res.result.message)

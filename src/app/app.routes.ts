@@ -13,8 +13,7 @@ export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'menu', component: MenuComponent}, //, canActivate:[AuthGaurd] },
-    { path: 'about', component: AboutComponent },
-    { path: 'cart', component: CartComponent },
+    { path: 'cart', component: CartComponent, canActivate:[AuthGaurd] },
     { path: 'contacts', component: ContactsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent }

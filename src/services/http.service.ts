@@ -16,7 +16,7 @@ export class HttpService{
         console.log(`${this.host}${url}`);
         const options = this._getRequestOptions();
         return this.http.get(`${this.host}${url}`, options)
-            .map((res:Response) => res.json());
+            .map((res:Response) =>res.json());
     }
 
     put(url:string, body){

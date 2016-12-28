@@ -6,23 +6,22 @@ import {StorageService} from './storage.service';
 @Injectable()
 export class UserService{
     private route: string;
-    private username: string;
 
-    constructor(private httpService: HttpService, private storage: StorageService) {
-        this.username = storage.getUsername();
-        this.route = `users/${this.username}`;
+    constructor(private httpService: HttpService) {
+        this.route = `users/cart`;
     }
 
     getCartMeals(){
-        return this.httpService.get(this.route + '/cart');
+        return this.httpService.get(this.route);
     }
 
     addMealToCart(meal) {
         meal.quantity = 1;
-        return this.httpService.post(this.route + '/cart/add', meal);
+        console.log(meal);
+        return this.httpService.post(this.route + '/add', meal);
     }
 
     removeMealFromCart(meal) {
-        return this.httpService.post(this.route + '/cart/remove', meal);
+        return this.httpService.post(this.route + '/remove', meal);
     }
 }

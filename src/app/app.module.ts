@@ -8,8 +8,6 @@ import { AuthModule } from './auth/auth.module';
 import { MenuModule } from './menu/menu.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { CartModule } from './cart/cart.module';
-//import { LoginModule } from './login/login.module';
-//import { RegisterModule } from './register/register.module';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
