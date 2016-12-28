@@ -10,19 +10,45 @@ export class ZoomImageDirective {
 
     @HostListener('click') onClick() {
         console.log('HERE!')
-        // this.zoom();
+        this.zoom();
     }
 
-    private zoom(){
+    private zoom() {
+        const gallery = this.el.nativeElement.parentNode;
+        const div = this.el.nativeElement.parentNode.nextElementSibling;
+        const img = this.el.nativeElement.parentNode.nextElementSibling.firstElementChild;
         console.log(this.el.nativeElement);
-        if(this.el.nativeElement.style.width==="100%"){
-            this.el.nativeElement.style.height = "200px";
-        }else{
-            this.el.nativeElement.style.width="100%";
-            this.el.nativeElement.style.position="fixed";
-            this.el.nativeElement.style.top="25%";
-            this.el.nativeElement.style.left="0";
-            this.el.nativeElement.style.zIndex="200";
+        console.log(this.el.nativeElement.parentNode);
+        console.log(this.el.nativeElement.parentNode.nextElementSibling);
+        console.log(this.el.nativeElement.parentNode.nextElementSibling.firstElementChild);
+        if (img.src && img.src.indexOf("localhost") < 0) {
+            // this.el.nativeElement.style.width="";
+            // this.el.nativeElement.style.position="";
+            // this.el.nativeElement.style.top="";
+            // this.el.nativeElement.style.left="";
+            // this.el.nativeElement.style.zIndex="";
+            console.log("src");
+            console.log(img.src);
+            img.src = "";
+            div.style.display = "none";
+
+            console.log(gallery);
+            gallery.className = "container gallery text-center";
+
+        } else {
+            // this.el.nativeElement.style.width="90%";
+            // this.el.nativeElement.style.position="fixed";
+            // this.el.nativeElement.style.top="25%";
+            // this.el.nativeElement.style.left="30%";
+            // this.el.nativeElement.style.zIndex="200";
+            console.log("no src");
+            
+            div.style.display = "block";
+
+            img.src = this.el.nativeElement.firstElementChild.src;
+
+            gallery.className += " blurred";
+            gallery.className += " disabled-background";
         }
     }
 }

@@ -1,5 +1,8 @@
 <div class="container gallery text-center">
-  <div *ngFor="let photo of photos" class="col-md-4">
-    <img xoom-image [src]="photo.source" alt="photo" class="img-responsive">
+  <div zoom-image *ngFor="let photo of photos" class="col-md-4">
+    <img [src]="photo.source" alt="photo" class="img-responsive">
   </div>
+</div>
+<div class="here">
+    <img src="" alt="photo" class="img-responsive">
 </div>

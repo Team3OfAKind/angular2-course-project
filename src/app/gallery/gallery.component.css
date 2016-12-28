@@ -9,6 +9,15 @@ img{
     margin: 5px; 
 }
 
+.here{
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    z-index: 200;
+}
+
 .gallery .selected {
     width: 100%;
     position: fixed;
@@ -32,7 +41,7 @@ img{
 }
 
 
-.gallery .blurred {
+.blurred {
     -webkit-filter: blur(10px);
     -moz-filter: blur(10px);
     -o-filter: blur(10px);
@@ -40,7 +49,7 @@ img{
     filter: blur(10px);
 }
 
-.gallery .disabled-background {
+.disabled-background {
     position: fixed;
     top: 0;
     left: 0;
