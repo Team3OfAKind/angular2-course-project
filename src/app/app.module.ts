@@ -16,14 +16,17 @@ import {MealsService} from '../services/meals.service';
 import {HttpService} from '../services/http.service';
 import {UserService} from '../services/user.service';
 import {StorageService} from '../services/storage.service';
+import {InfoService} from '../services/info.service';
 
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 import { appRoutes } from './app.routes';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +37,6 @@ import { appRoutes } from './app.routes';
     MenuModule,
     ContactsModule,
     CartModule,
-    //LoginModule,
-    //RegisterModule,
     AuthModule,
     RouterModule.forRoot(appRoutes)
   ],
@@ -44,6 +45,7 @@ import { appRoutes } from './app.routes';
     HttpService, 
     UserService,
     StorageService,
+    InfoService,
     AuthGaurd],
   bootstrap: [AppComponent]
 })
