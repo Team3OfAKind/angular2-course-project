@@ -1,49 +1,49 @@
 <div class="container main-container">
 
-  <div class="col-md-4">
-    <div>
-      <label for="all">
+    <div class="col-md-4 menu-categories">
+        <div class="category category-active">
+            <label for="all">
         <input type="radio" [(ngModel)]="category" name="category" id="all" value="All" checked="checked"/>
         <span>All</span>
       </label>
-    </div>
-    <div *ngFor="let current of categories; let i = index">
-      <label [for]="i">
+        </div>
+        <div class="category" *ngFor="let current of categories; let i = index">
+            <label [for]="i">
         <input type="radio" [(ngModel)]="category" name="category" [id]="i" [value]="current">
         <span>{{current}}</span>
       </label>
-    </div>
-  </div>
-
-
-  <div class="col-md-8">
-
-    <div class="form-group">
-      <input type="text" [(ngModel)]="searchWord" placeholder="Search..." />
+        </div>
     </div>
 
-    <div class="form-group">
-      <label for="sort-type">Sort by</label>
-      <select class="form-control" id="sort-type" [(ngModel)]="sortType">
+
+    <div class="col-md-8">
+
+        <div class="form-group">
+            <input type="text" [(ngModel)]="searchWord" placeholder="Search..." />
+        </div>
+
+        <div class="form-group">
+            <label for="sort-type">Sort by</label>
+            <select class="form-control" id="sort-type" [(ngModel)]="sortType">
         <option *ngFor="let type of sortTypes" [value]="type">{{type}}</option>
       </select>
-      <label for="sort-order">Order in</label>
-      <select class="form-control" id="sort-order" [(ngModel)]="sortOrder">
+            <label for="sort-order">Order in</label>
+            <select class="form-control" id="sort-order" [(ngModel)]="sortOrder">
         <option *ngFor="let order of sortOrders" [value]="order">{{order}}</option>
       </select>
-    </div>
-
-    <ul>
-      <li *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder; let i = index" class="container">
-        <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
-        <div class="meal-info">
-          <strong>{{meal.name}}</strong>
-          <p>{{meal.description}}</p>
-          <p class="lead">{{meal.price}}</p>
-          <button class="btn btn-danger" (click)="addToCart(meal._id)">Add to cart</button>
-          <button class="btn btn-success">Like</button>
         </div>
-      </li>
-    </ul>
-  </div>
+
+        <ul>
+            <li *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder; let i = index" class="container">
+                <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
+                <div class="meal-info">
+                    <strong>{{meal.name}}</strong>
+                    <p>{{meal.description}}</p>
+                    <p class="lead">{{meal.price}}</p>
+                    <button class="btn btn-danger" (click)="addToCart(meal._id)">Add to cart</button>
+                    <button class="btn btn-success">Like</button>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

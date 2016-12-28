@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { ContactsComponent } from './contacts.component';
+import { LoadingAnimateModule } from '../animations/animation.module';
 
 @NgModule({
   declarations: [
-    ContactsComponent
+    ContactsComponent,
   ],
-  imports: [],
+  imports: [LoadingAnimateModule],
   exports: [],
   providers: []
 })
