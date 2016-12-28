@@ -42,6 +42,7 @@
           <p class="lead">{{meal.price}}</p>
           <button class="btn btn-danger" (click)="addToCart(meal._id)">Add to cart</button>
           <button class="btn btn-success">Like</button>
+          <simple-notifications [options]="options "></simple-notifications>
         </div>
       </li>
     </ul>

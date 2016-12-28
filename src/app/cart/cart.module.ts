@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { CartComponent } from './cart.component';
 
+import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifications';
+
 @NgModule({
   declarations: [
     CartComponent
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, SimpleNotificationsModule],
   exports: [],
-  providers: []
+  providers: [NotificationsService]
 })
 export class CartModule { }

@@ -16,9 +16,11 @@ export class MenuComponent implements OnInit {
   sortOrders: string[];
 
   searchWord: string;
-  // category: 'All';
+  category: 'All';
   sortType: string;
   sortOrder: string;
+
+  options: Object;
 
   constructor(private mealsService: MealsService, private UserService: UserService, private _notification: NotificationsService) {
     this.sortTypes = ['Name', 'Price', 'Likes'];
@@ -44,14 +46,15 @@ export class MenuComponent implements OnInit {
           this.categories.push(x.category);
         });
       });
+
+      this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
   }
 
   addToCart(id) {
     const mealToAdd = this.meals.find(x => x._id == id);
     this.UserService.addMealToCart(mealToAdd)
       .subscribe((res) => {
-        console.log(res.result.message)
-        this._notification.success('', 'res.result.message');  //Not working
+        this._notification.success('', res.result.message);
       });
   }
 }
