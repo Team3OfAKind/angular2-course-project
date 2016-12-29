@@ -4,8 +4,10 @@
     <strong>{{meal.name}}</strong>
     <p>{{meal.description}}</p>
     <p class="lead">{{meal.price}}</p>
-    <button *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</button>
-    <button *ngIf="!isFavourite" class="btn btn-success">Like</button>
+    <div *ngIf="hasLoggedUser">
+      <button *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</button>
+      <button class="btn" [ngClass]="{'btn-success': !isFavourite, 'btn-warning': isFavourite}" (click)="changeLike()">{{likeButtonText}}</button>
+    </div>
     <simple-notifications [options]="options "></simple-notifications>
   </div>
 </li>
