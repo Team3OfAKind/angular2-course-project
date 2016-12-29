@@ -17,12 +17,14 @@ export class SubmitComponent implements OnInit {
   totalPrice: number = 0;
   addresses: Address[] = [];
   haveAddress: boolean = false;
+  hideAddButtons: boolean;
 
   constructor(private UserService: UserService, private AddressService: AddressService) {
     AddressService.AddressAdded$
       .subscribe(address => {
         this.addresses.push(address);
         this.haveAddress = true;
+        this.hideAddButtons = false;
       })
   }
 
@@ -43,5 +45,9 @@ export class SubmitComponent implements OnInit {
           this.haveAddress = true;
         }
       });
+  }
+
+  addAddress() {
+    this.hideAddButtons = true;
   }
 }

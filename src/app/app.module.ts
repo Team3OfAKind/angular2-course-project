@@ -50,7 +50,7 @@ import { FooterComponent } from './footer/footer.component';
     ContactsModule,
     CartModule,
     AuthModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     LoadingAnimateModule,
     GalleryModule,
     SubmitModule,
