@@ -1,6 +1,6 @@
 export interface CartMeal {
     name: string
     price: string
-    quantity: string,
+    quantity: number,
     imageLink: string;
 }

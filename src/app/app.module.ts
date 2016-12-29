@@ -29,7 +29,7 @@ import { GalleryModule } from './gallery/gallery.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

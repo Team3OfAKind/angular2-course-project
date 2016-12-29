@@ -35,7 +35,11 @@
         </div>
 
         <ul>
-            <meal-menu *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder;" class="container" [meal]="meal" [user]="user">
+            <meal-menu
+             class="container" 
+            *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder;"
+             [meal]="meal" 
+             [user]="user">
             </meal-menu>
         </ul>
     </div>

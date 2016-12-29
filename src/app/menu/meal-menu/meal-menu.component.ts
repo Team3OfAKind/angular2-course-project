@@ -29,6 +29,13 @@ export class MealMenuComponent implements OnInit {
     this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
   }
 
+  ngOnChanges(){
+     if (this.user) {
+      this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
+      this.isFavourite = false;
+    }
+  }
+
   addToCart() {
     this.userService.addMealToCart(this.meal)
       .subscribe((res) => {

@@ -14,9 +14,9 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   options: Object;
 
-  constructor(private UserService: UserService, private _notification: NotificationsService) { 
+  constructor(private UserService: UserService, private _notification: NotificationsService) {
 
-   }
+  }
 
   ngOnInit() {
     this.UserService.getCartMeals()
@@ -30,32 +30,18 @@ export class CartComponent implements OnInit {
         });
       });
 
-      this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
+    this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
   }
 
-  removeFromCart(index) {
-    const meal = this.cartMeals[index];
-    const mealPrice = +meal.price.split(' ')[0];
-    this.totalPrice -= mealPrice * +meal.quantity;
+  removeFromCart(event) {
+    this.cartMeals.splice(event.index, 1);    
+    this.totalPrice -= event.price;
     this.totalPrice = +this.totalPrice.toFixed(2);
-    this.cartMeals.splice(index, 1);
-    this.UserService.removeMealFromCart(meal)
-      .subscribe((res) => {
-        this._notification.success('', res.result.message);
-      });
   }
 
-  updateQuantity(event, index) {
-    const meal = this.cartMeals[index];
-    const changeBy = event.target.value - +meal.quantity;
-    this.UserService.updateMealCartQuantity(meal.name, changeBy)
-      .subscribe((res) => {
-        meal.quantity = event.target.value;
-        this.totalPrice += +meal.price.split(' ')[0] * changeBy;
-        this.totalPrice = +this.totalPrice.toFixed(2);
-        
-        this._notification.success('', res.result.message);
-      });
+  updateQuantity(event) {
+    this.totalPrice += event.price;
+    this.totalPrice = +this.totalPrice.toFixed(2);
   }
 
 }
