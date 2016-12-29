@@ -17,7 +17,7 @@ export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'gallery', component: GalleryComponent },
-    { path: 'menu', component: MenuComponent}, //, canActivate:[AuthGaurd] },
+    { path: 'menu', component: MenuComponent},
     { path: 'cart', component: CartComponent, canActivate:[AuthGaurd] },
     { 
         path: 'submit', 

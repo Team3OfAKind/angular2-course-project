@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NotificationsService } from 'angular2-notifications';
 import { UserService } from '../../../services/user.service';
+import { MealsService } from '../../../services/meals.service';
 import { Meal } from '../../../models/meal-model';
 import { User } from '../../../models/user-model';
 
@@ -19,16 +20,18 @@ export class MealMenuComponent implements OnInit {
     @Input() meal: Meal;
     @Input() user: User;
 
-    constructor(private userService: UserService, private notification: NotificationsService) { }
+    constructor(private userService: UserService, private notification: NotificationsService, private mealsService: MealsService) { }
 
     ngOnInit() {
         this.hasLoggedUser = false;
         if (this.user) {
             this.hasLoggedUser = true;
             this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
-            this.isFavourite = false;
-            this.likeButtonText = 'Like';
-            //this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
+            //this.isFavourite = false;
+
+            this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
+            this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';            
+            
         }
         this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
     }
@@ -37,9 +40,9 @@ export class MealMenuComponent implements OnInit {
         if (this.user) {
             this.hasLoggedUser = true;
             this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
-            this.isFavourite = false;
-            this.likeButtonText = 'Like';
-            //this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
+            //this.isFavourite = false;
+            this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
+            this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';            
         }
     }
 
@@ -52,12 +55,18 @@ export class MealMenuComponent implements OnInit {
     }
 
     changeLike() {
-        if (this.isFavourite) {
-            this.isFavourite = false;
-            this.likeButtonText = 'Like';
-        } else {
-            this.isFavourite = true;
-            this.likeButtonText = 'Dislike';
-        }
+        this.mealsService.changeLike(this.likeButtonText.toLowerCase(), this.meal)
+            .subscribe(res => {
+                // this.notification.success('', res.message);
+                console.log(res.err);
+                console.log(res.message);
+                if (this.isFavourite) {
+                    this.isFavourite = false;
+                    this.likeButtonText = 'Like';
+                } else {
+                    this.isFavourite = true;
+                    this.likeButtonText = 'Dislike';
+                }
+            });
     }
 }

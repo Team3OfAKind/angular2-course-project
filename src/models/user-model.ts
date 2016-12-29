@@ -6,6 +6,7 @@ export class User {
     email: string;
     image: string;
     cartMeals: any[];
+    favouriteMeals: any[];
     addresses: [{
         street: string,
         city: string
