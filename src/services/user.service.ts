@@ -36,4 +36,8 @@ export class UserService{
     getUserAddresses() {
         return this.httpService.get(this.route + '/addresses');
     }
+
+    addAddress(address) {
+        return this.httpService.post(this.route + '/addresses', address);
+    }
 }

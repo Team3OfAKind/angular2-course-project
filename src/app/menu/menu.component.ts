@@ -59,12 +59,4 @@ export class MenuComponent implements OnInit {
 
     this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
   }
-
-  // addToCart(id) {
-  //   const mealToAdd = this.meals.find(x => x._id == id);
-  //   this.userService.addMealToCart(mealToAdd)
-  //     .subscribe((res) => {
-  //       this._notification.success('', res.result.message);
-  //     });
-  // }
 }

@@ -25,6 +25,7 @@ import {AuthGaurd} from '../gaurds/auth.gaurd';
 import { appRoutes } from './app.routes';
 import { LoadingAnimateModule } from './animations/animation.module';
 import { GalleryModule } from './gallery/gallery.module';
+import { AddAddressModule } from './add-address/add-address.module';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { GalleryModule } from './gallery/gallery.module';
     RouterModule.forRoot(appRoutes),
     LoadingAnimateModule,
     GalleryModule,
-    SubmitModule
+    SubmitModule,
+    AddAddressModule
   ],
   providers: [
     MealsService, 

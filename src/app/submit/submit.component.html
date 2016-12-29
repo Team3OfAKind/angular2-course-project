@@ -18,11 +18,12 @@
         <button class="btn btn-success">Use address</button>
       </div>
       <br>
-      <button class="btn btn-warning">Add new address</button>
+      <button class="btn btn-warning" routerLink="add-address">Add new address</button>
     </div>
     <div *ngIf="!haveAddress">
       <p>You don't have any addresses yet</p>
-      <button class="btn btn-warning">Add address</button>
+      <button class="btn btn-warning" routerLink="add-address">Add address</button>
     </div>
+    <router-outlet></router-outlet>
   </div>
 </div>

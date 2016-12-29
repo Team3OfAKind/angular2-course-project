@@ -4,6 +4,8 @@ import { UserService } from '../../services/user.service';
 import { CartMeal } from '../../models/cart-meal-model';
 import { Address } from '../../models/address-model';
 
+import { AddressService } from '../../services/address.service';
+
 @Component({
   selector: 'app-submit',
   templateUrl: './submit.component.html',
@@ -16,27 +18,30 @@ export class SubmitComponent implements OnInit {
   addresses: Address[] = [];
   haveAddress: boolean = false;
 
-  constructor(private UserService: UserService) { }
+  constructor(private UserService: UserService, private AddressService: AddressService) {
+    AddressService.AddressAdded$
+      .subscribe(address => {
+        this.addresses.push(address);
+        this.haveAddress = true;
+      })
+  }
 
   ngOnInit() {
-    this.UserService.getCartMeals()
+    this.UserService.getUserProfile()
       .subscribe(res => {
-        this.cartMeals = res.result.meals;
+        this.cartMeals = res.result.user.cartMeals;
 
         this.cartMeals.forEach(meal => {
           const mealPrice = +meal.price.split(' ')[0];
           this.totalPrice += mealPrice * +meal.quantity;
           this.totalPrice = +this.totalPrice.toFixed(2);
         });
-      });
 
-    this.UserService.getUserAddresses()
-      .subscribe(res => {
-        this.addresses = res.result.addresses;
+        this.addresses = res.result.user.addresses;
+
         if (this.addresses.length > 0) {
           this.haveAddress = true;
         }
       });
   }
-
 }

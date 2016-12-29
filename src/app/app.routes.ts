@@ -8,16 +8,25 @@ import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { SubmitComponent } from './submit/submit.component';
+import { AddAddressComponent } from './add-address/add-address.component';
 
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 export const appRoutes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'gallery', component: GalleryComponent },
     { path: 'menu', component: MenuComponent}, //, canActivate:[AuthGaurd] },
     { path: 'cart', component: CartComponent, canActivate:[AuthGaurd] },
-    { path: 'submit', component: SubmitComponent, canActivate:[AuthGaurd] },
+    { 
+        path: 'submit', 
+        component: SubmitComponent, 
+        canActivate:[AuthGaurd],
+        children: [
+             { path: 'add-address', component: AddAddressComponent, canActivate:[AuthGaurd] }
+        ]
+    },
     { path: 'contacts', component: ContactsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent }
