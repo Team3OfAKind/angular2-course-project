@@ -1,3 +1,28 @@
-<p>
-  submit works!
-</p>
+<div class="wrapper">
+  <div class="meals">
+    <div *ngFor="let meal of cartMeals; let i = index">
+      <div class="meal-info">
+        <strong>{{meal.name}}</strong>
+        <p>{{meal.price}} Quantity: {{meal.quantity}}</p>
+      </div>
+    </div>
+    <div>
+      <p>Total price: {{totalPrice}}</p>
+    </div>
+  </div>
+
+  <div class="addresses">
+    <div *ngIf="haveAddress">
+      <div *ngFor="let address of addresses">
+        <p><strong>Address:</strong> {{address.street}} <strong>City:</strong> {{address.city}}</p>
+        <button class="btn btn-success">Use address</button>
+      </div>
+      <br>
+      <button class="btn btn-warning">Add new address</button>
+    </div>
+    <div *ngIf="!haveAddress">
+      <p>You don't have any addresses yet</p>
+      <button class="btn btn-warning">Add address</button>
+    </div>
+  </div>
+</div>

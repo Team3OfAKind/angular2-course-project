@@ -1,4 +1,4 @@
-export interface ICartMeal {
+export interface CartMeal {
     name: string
     price: string
     quantity: string,

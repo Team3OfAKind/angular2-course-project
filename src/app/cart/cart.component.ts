@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { ICartMeal } from '../../models/cart-meal-model'
+import { CartMeal } from '../../models/cart-meal-model';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
@@ -10,7 +10,7 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class CartComponent implements OnInit {
 
-  cartMeals: ICartMeal[] = [];
+  cartMeals: CartMeal[] = [];
   totalPrice: number = 0;
   options: Object;
 
