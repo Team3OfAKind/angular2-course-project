@@ -27,10 +27,18 @@ import { LoadingAnimateModule } from './animations/animation.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { AddAddressModule } from './add-address/add-address.module';
 
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+// import { LoginFormComponent } from './login-form/login-form.component';
+// import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    // LoginFormComponent,
+    // RegisterFormComponent
   ],
   imports: [
     BrowserModule,
