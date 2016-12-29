@@ -35,6 +35,10 @@ export class MealCartComponent implements OnInit {
   }
 
   updateQuantity(event) {
+    if (event.target.value < 1 || event.target.value > 999) {
+      this.notification.error('', 'Invalid quantity');
+      return;
+    }
     const changeBy = event.target.value - this.meal.quantity;
     this.UserService.updateMealCartQuantity(this.meal.name, changeBy)
       .subscribe((res) => {
