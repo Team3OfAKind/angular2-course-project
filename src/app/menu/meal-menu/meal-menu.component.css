@@ -1,0 +1,15 @@
+img {
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+li {
+    margin-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.meal-info {
+    display: inline-block;
+    margin-left: 10px;
+}

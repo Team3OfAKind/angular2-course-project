@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MealsService } from '../../services/meals.service';
 import { UserService } from '../../services/user.service';
 import { Meal } from '../../models/meal-model';
+import { User } from '../../models/user-model';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
@@ -10,19 +11,20 @@ import { NotificationsService } from 'angular2-notifications';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  user: User;
   meals: Meal[];
   categories: string[];
   sortTypes: string[];
   sortOrders: string[];
 
   searchWord: string;
-  category: 'All';
+  // category: 'All';
   sortType: string;
   sortOrder: string;
 
   options: Object;
 
-  constructor(private mealsService: MealsService, private UserService: UserService, private _notification: NotificationsService) {
+  constructor(private mealsService: MealsService, private userService: UserService, private _notification: NotificationsService) {
     this.sortTypes = ['Name', 'Price', 'Likes'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
@@ -47,14 +49,22 @@ export class MenuComponent implements OnInit {
         });
       });
 
-      this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
+    this.userService.getUserProfile()
+      .subscribe(
+      res => {
+        this.user = res.result.user;
+      },
+      err => { });
+
+
+    this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
   }
 
-  addToCart(id) {
-    const mealToAdd = this.meals.find(x => x._id == id);
-    this.UserService.addMealToCart(mealToAdd)
-      .subscribe((res) => {
-        this._notification.success('', res.result.message);
-      });
-  }
+  // addToCart(id) {
+  //   const mealToAdd = this.meals.find(x => x._id == id);
+  //   this.userService.addMealToCart(mealToAdd)
+  //     .subscribe((res) => {
+  //       this._notification.success('', res.result.message);
+  //     });
+  // }
 }

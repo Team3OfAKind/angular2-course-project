@@ -35,18 +35,8 @@
         </div>
 
         <ul>
-            <li *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder;" class="container">
-                <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
-                <div class="meal-info">
-                    <strong>{{meal.name}}</strong>
-                    <p>{{meal.description}}</p>
-                    <p class="lead">{{meal.price}}</p>
-                    <button class="btn btn-danger" (click)="addToCart(meal._id)">Add to cart</button>
-                    <button class="btn btn-success">Like</button>
-                    <simple-notifications [options]="options "></simple-notifications>
-
-                </div>
-            </li>
+            <meal-menu *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder;" class="container" [meal]="meal" [user]="user">
+            </meal-menu>
         </ul>
     </div>
 </div>

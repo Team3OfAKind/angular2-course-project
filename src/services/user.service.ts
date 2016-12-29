@@ -11,6 +11,10 @@ export class UserService{
         this.route = `users`;
     }
 
+    getUserProfile(){
+        return this.httpService.get(this.route+'/profile');
+    }   
+
     getCartMeals(){
         return this.httpService.get(this.route + '/cart');
     }

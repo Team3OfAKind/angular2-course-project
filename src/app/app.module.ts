@@ -26,6 +26,7 @@ import { appRoutes } from './app.routes';
 import { LoadingAnimateModule } from './animations/animation.module';
 import { GalleryModule } from './gallery/gallery.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
