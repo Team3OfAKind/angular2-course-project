@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { MenuModule } from './menu/menu.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { CartModule } from './cart/cart.module';
+import { SubmitModule } from './submit/submit.module';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -41,7 +42,8 @@ import { GalleryModule } from './gallery/gallery.module';
     AuthModule,
     RouterModule.forRoot(appRoutes),
     LoadingAnimateModule,
-    GalleryModule
+    GalleryModule,
+    SubmitModule
   ],
   providers: [
     MealsService, 

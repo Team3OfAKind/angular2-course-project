@@ -3,7 +3,7 @@ img {
     display: inline-block;
 }
 
-.product-info {
+.meal-info {
     display: inline-block;
 }
 
@@ -13,4 +13,8 @@ input[type=number] {
 
 input[type=number]::-webkit-inner-spin-button {
     opacity: 1
+}
+
+.wrapper {
+    padding: 50px;
 }

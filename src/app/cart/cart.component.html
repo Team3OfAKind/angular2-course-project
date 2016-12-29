@@ -1,12 +1,13 @@
-<div *ngFor="let product of cartMeals; let i = index">
-    <img src="{{product.imageLink}}" alt="product.name">
-    <div class="product-info">
-        <strong>{{product.name}}</strong>
+<div class="wrapper">
+<div *ngFor="let meal of cartMeals; let i = index">
+    <img src="{{meal.imageLink}}" alt="meal.name">
+    <div class="meal-info">
+        <strong>{{meal.name}}</strong>
         <button class="btn btn-danger" (click)="removeFromCart(i)">Remove from cart</button>
-        <p>{{product.price}}</p>
+        <p>{{meal.price}}</p>
         <p>
-            Quantity: {{product.quantity}}
-            <input type="number" name="quantity" [value]="product.quantity" (change)="updateQuantity($event, i)" min="1" max="999">
+            Quantity: {{meal.quantity}}
+            <input type="number" name="quantity" [value]="meal.quantity" (change)="updateQuantity($event, i)" min="1" max="999">
         </p>
         <simple-notifications [options]="options "></simple-notifications>
     </div>
@@ -14,6 +15,5 @@
 <div>
     <p>Total price: {{totalPrice}}</p>
 </div>
-<button class="btn btn-success">Submit order</button>
-<br>
-<br>
+<button class="btn btn-success" [routerLink]="'/submit'">Submit order</button>
+</div>  

@@ -7,6 +7,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { SubmitComponent } from './submit/submit.component';
 
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
@@ -16,6 +17,7 @@ export const appRoutes: Routes = [
     { path: 'gallery', component: GalleryComponent },
     { path: 'menu', component: MenuComponent}, //, canActivate:[AuthGaurd] },
     { path: 'cart', component: CartComponent, canActivate:[AuthGaurd] },
+    { path: 'submit', component: SubmitComponent, canActivate:[AuthGaurd] },
     { path: 'contacts', component: ContactsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent }
