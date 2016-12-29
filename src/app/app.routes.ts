@@ -12,6 +12,7 @@ import { SubmitComponent } from './submit/submit.component';
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 export const appRoutes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'gallery', component: GalleryComponent },
