@@ -29,6 +29,7 @@ import { AddAddressModule } from './add-address/add-address.module';
 import { OrdersModule } from './orders/orders.module';
 
 import { HeaderComponent } from './header/header.component';
+import { UserHeaderComponent } from './header/user-header.component';
 import { FooterComponent } from './footer/footer.component';
 // import { LoginFormComponent } from './login-form/login-form.component';
 // import { RegisterFormComponent } from './register-form/register-form.component';
@@ -37,7 +38,8 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
+    UserHeaderComponent,
+    FooterComponent
     // LoginFormComponent,
     // RegisterFormComponent
   ],
