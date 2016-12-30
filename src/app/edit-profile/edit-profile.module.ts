@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {ProfileComponent} from './profile.component';
-import {MealFavouriteComponent} from './meal-favourite/meal-favourite.component';
+import {EditProfileComponent} from './edit-profile.component';
 import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifications';
 
 @NgModule({
@@ -10,7 +9,7 @@ import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifi
     CommonModule,
     SimpleNotificationsModule
   ],
-  declarations: [ProfileComponent, MealFavouriteComponent],
+  declarations: [EditProfileComponent],
   providers: [SimpleNotificationsModule]
 })
-export class ProfileModule { }
+export class EditProfileModule { }

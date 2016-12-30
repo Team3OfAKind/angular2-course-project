@@ -1,0 +1,13 @@
+<li class="container">
+  <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
+  <div class="meal-info">
+    <strong>{{meal.name}}</strong>
+    <p>{{meal.description}}</p>
+    <p class="lead">{{meal.price}} lv.</p>
+    <div>
+    <button *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</button>
+    <button class="btn btn-warning" (click)="dislike()">Dislike</button>
+    </div>
+    <simple-notifications [options]="options "></simple-notifications>
+  </div>
+</li>

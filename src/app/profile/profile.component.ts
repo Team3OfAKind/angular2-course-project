@@ -20,5 +20,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  removeFromFavourite(event){
+    this.user.favouriteMeals.splice(event.index, 1);
+  }
   
 }

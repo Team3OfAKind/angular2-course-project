@@ -17,8 +17,11 @@
 
   <strong>Favourite meals</strong>
   <ul>
-    <li *ngFor="let meal of user?.favouriteMeals">
-      {{meal.name}}
-    </li>
+    <meal-favourite *ngFor="let meal of user?.favouriteMeals; let i = index"
+     [meal]="meal" 
+     [user]="user" 
+     [index]="i"
+     (onDislike)=removeFromFavourite($event)>
+    </meal-favourite>
   </ul>
 </div>

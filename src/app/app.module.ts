@@ -15,6 +15,7 @@ import { GalleryModule } from './gallery/gallery.module';
 import { AddAddressModule } from './add-address/add-address.module';
 import { OrdersModule } from './orders/orders.module';
 import { ProfileModule } from './profile/profile.module';
+import { EditProfileModule } from './edit-profile/edit-profile.module';
 import { LoadingAnimateModule } from './animations/animation.module';
 
 import { AppComponent } from './app.component';
@@ -33,7 +34,6 @@ import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 import { appRoutes } from './app.routes';
 
-
 // import { LoginFormComponent } from './login-form/login-form.component';
 // import { RegisterFormComponent } from './register-form/register-form.component';
 
@@ -42,7 +42,7 @@ import { appRoutes } from './app.routes';
     AppComponent,
     HeaderComponent,
     UserHeaderComponent,
-    FooterComponent
+    FooterComponent,
     // LoginFormComponent,
     // RegisterFormComponent
   ],
@@ -62,7 +62,8 @@ import { appRoutes } from './app.routes';
     SubmitModule,
     AddAddressModule,
     OrdersModule,
-    ProfileModule
+    ProfileModule,
+    EditProfileModule
   ],
   providers: [
     MealsService, 

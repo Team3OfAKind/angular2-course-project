@@ -11,7 +11,7 @@ import { SubmitComponent } from './submit/submit.component';
 import { AddAddressComponent } from './add-address/add-address.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import {EditProfileComponent} from './edit-profile/edit-profile.component';
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 export const appRoutes: Routes = [
@@ -34,5 +34,6 @@ export const appRoutes: Routes = [
     { path: 'contacts', component: ContactsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'profile', component: ProfileComponent },
+    //{ path: 'profile/edit', component: EditProfileComponent, canActivate:[AuthGaurd] },
+    { path: 'profile', component: ProfileComponent, canActivate:[AuthGaurd] },
 ];
