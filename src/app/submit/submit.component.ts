@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserService } from '../../services/user.service';
 import { CartMeal } from '../../models/cart-meal-model';
 import { Address } from '../../models/address-model';
 
 import { AddressService } from '../../services/address.service';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-submit',
@@ -20,8 +22,13 @@ export class SubmitComponent implements OnInit {
   hideAddButton: boolean;
   isAddressSelected: boolean = false;
   selectedAddress: Address;
+  options: Object;
 
-  constructor(private UserService: UserService, private AddressService: AddressService) {
+  constructor(
+    private UserService: UserService, 
+    private AddressService: AddressService, 
+    private _router: Router,
+    private _notification: NotificationsService) {
     AddressService.AddressAdded$
       .subscribe(address => {
         this.addresses.push(address);
@@ -47,6 +54,8 @@ export class SubmitComponent implements OnInit {
           this.haveAddress = true;
         }
       });
+
+      this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
   }
 
   addAddress() {
@@ -66,5 +75,11 @@ export class SubmitComponent implements OnInit {
           this.haveAddress = false;
         }
       })
+  }
+
+  placeOrder() {
+    //add order to user orders
+    this._notification.success('', 'Order placed successfully'); //res.result.message
+    setTimeout(() => this._router.navigateByUrl('/orders'), 2500);
   }
 }

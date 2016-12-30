@@ -26,6 +26,7 @@ import { appRoutes } from './app.routes';
 import { LoadingAnimateModule } from './animations/animation.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { AddAddressModule } from './add-address/add-address.module';
+import { OrdersModule } from './orders/orders.module';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -54,7 +55,8 @@ import { FooterComponent } from './footer/footer.component';
     LoadingAnimateModule,
     GalleryModule,
     SubmitModule,
-    AddAddressModule
+    AddAddressModule,
+    OrdersModule
   ],
   providers: [
     MealsService, 

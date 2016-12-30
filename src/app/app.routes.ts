@@ -9,6 +9,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { SubmitComponent } from './submit/submit.component';
 import { AddAddressComponent } from './add-address/add-address.component';
+import { OrdersComponent } from './orders/orders.component';
 
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
@@ -27,6 +28,7 @@ export const appRoutes: Routes = [
              { path: 'add-address', component: AddAddressComponent, canActivate:[AuthGaurd] }
         ]
     },
+    { path: 'orders', component: OrdersComponent, canActivate:[AuthGaurd] },
     { path: 'contacts', component: ContactsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent }
