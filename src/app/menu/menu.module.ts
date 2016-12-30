@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { MenuComponent } from './menu.component';
 import { MealMenuComponent } from './meal-menu/meal-menu.component';
 import { SearchPipe } from '../../pipes/search.pipe';
@@ -19,7 +20,8 @@ import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifi
   imports: [
     CommonModule,
     FormsModule,
-    SimpleNotificationsModule
+    SimpleNotificationsModule,
+    RouterModule
   ],
   exports: [],
   providers: [NotificationsService]

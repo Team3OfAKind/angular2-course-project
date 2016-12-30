@@ -18,7 +18,8 @@ export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'gallery', component: GalleryComponent },
-    { path: 'menu', component: MenuComponent},
+    { path: 'menu/:category', component: MenuComponent},    
+    { path: 'menu', redirectTo: 'menu/All', pathMatch: 'full'},
     { path: 'cart', component: CartComponent, canActivate:[AuthGaurd] },
     { 
         path: 'submit', 

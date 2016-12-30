@@ -1,7 +1,7 @@
 <div class="container main-container">
 
     <div class="col-md-4 menu-categories">
-        <div class="category category-active">
+        <!--<div class="category category-active">
             <label for="all">
         <input type="radio" [(ngModel)]="category" name="category" id="all" value="All" checked="checked"/>
         <span>All</span>
@@ -12,6 +12,12 @@
         <input type="radio" [(ngModel)]="category" name="category" [id]="i" [value]="current">
         <span>{{current}}</span>
       </label>
+        </div>-->
+        <div class="category category-active">
+            <a routerLink="/menu/All" routerLinkActive="active">All</a>
+        </div>
+        <div class="category" *ngFor="let current of categories; let i = index">
+            <a [routerLink]="['/menu', current]" routerLinkActive="active">{{current}}</a>
         </div>
     </div>
 
@@ -35,11 +41,8 @@
         </div>
 
         <ul>
-            <meal-menu
-             class="container" 
-            *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder;"
-             [meal]="meal" 
-             [user]="user">
+            <meal-menu class="container" *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder;"
+                [meal]="meal" [user]="user">
             </meal-menu>
         </ul>
     </div>

@@ -4,6 +4,7 @@ import { UserService } from '../../services/user.service';
 import { Meal } from '../../models/meal-model';
 import { User } from '../../models/user-model';
 import { NotificationsService } from 'angular2-notifications';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -18,13 +19,17 @@ export class MenuComponent implements OnInit {
   sortOrders: string[];
 
   searchWord: string;
-  // category: 'All';
+  category: string;
   sortType: string;
   sortOrder: string;
 
   options: Object;
 
-  constructor(private mealsService: MealsService, private userService: UserService, private _notification: NotificationsService) {
+  constructor(
+    private mealsService: MealsService,
+    private userService: UserService,
+    private _notification: NotificationsService,
+    private route: ActivatedRoute) {
     this.sortTypes = ['Name', 'Price', 'Likes'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
@@ -40,6 +45,8 @@ export class MenuComponent implements OnInit {
         this.categories = [];
 
         // TODO: Optimize this!!
+        this.route.params
+          .subscribe((params: Params) => this.category = params['category']);
 
         this.meals.forEach(x => {
           if (this.categories.indexOf(x.category) >= 0) {

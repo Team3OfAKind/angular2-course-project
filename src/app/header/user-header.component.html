@@ -1,5 +1,5 @@
 <li *ngIf="!isLoggedIn"><a routerLink="login">Login</a></li>
 <li *ngIf="!isLoggedIn"><a routerLink="register">Register</a></li>
 <li *ngIf="isLoggedIn"><a routerLink="cart">Cart</a></li>
-<li *ngIf="isLoggedIn"><a routerLink="login">Profile</a></li>
+<li *ngIf="isLoggedIn"><a routerLink="profile">Profile</a></li>
 <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
