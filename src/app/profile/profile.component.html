@@ -1,0 +1,24 @@
+<div class="container profile">
+  <div class="col-md-2">
+    <img alt="profile image" [src]="user?.image">
+  </div>
+  <div class="col-md-10">
+    <h2>{{user?.firstName}} {{user?.lastName}}</h2>
+    <h3>{{user?.username}}</h3>
+
+    <p>Email: {{user?.email}}</p>
+  </div>
+  <strong>Addresses</strong>
+  <ul>
+    <li *ngFor="let address of user?.addresses">
+      {{address.city}}, {{address.street}}
+    </li>
+  </ul>
+
+  <strong>Favourite meals</strong>
+  <ul>
+    <li *ngFor="let meal of user?.favouriteMeals">
+      {{meal.name}}
+    </li>
+  </ul>
+</div>
