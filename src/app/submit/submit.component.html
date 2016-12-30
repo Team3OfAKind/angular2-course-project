@@ -3,11 +3,11 @@
     <div *ngFor="let meal of cartMeals; let i = index">
       <div class="meal-info">
         <strong>{{meal.name}}</strong>
-        <p>{{meal.price}} Quantity: {{meal.quantity}}</p>
+        <p>{{meal.price}} lv. Quantity: {{meal.quantity}}</p>
       </div>
     </div>
     <div>
-      <p><strong>Total price: {{totalPrice}}</strong></p>
+      <p><strong>Total price: {{totalPrice}} lv.</strong></p>
       <div><strong>Deliver to:</strong> 
         <div *ngIf="isAddressSelected">
           <p><strong>Address:</strong> {{selectedAddress.street}} <strong>City:</strong> {{selectedAddress.city}}</p>

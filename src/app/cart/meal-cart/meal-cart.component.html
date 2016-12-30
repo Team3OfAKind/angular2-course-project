@@ -3,7 +3,7 @@
     <div class="meal-info">
         <strong>{{meal.name}}</strong>
         <button class="btn btn-danger" (click)="removeFromCart()">Remove from cart</button>
-        <p>{{meal.price}}</p>
+        <p>{{meal.price}} lv.</p>
         <p>
             Quantity: {{meal.quantity}}
             <input type="number" name="quantity" [value]="meal.quantity" (change)="updateQuantity($event)" min="1" max="999">

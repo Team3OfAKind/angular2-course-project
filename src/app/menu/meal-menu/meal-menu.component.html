@@ -3,7 +3,7 @@
   <div class="meal-info">
     <strong>{{meal.name}}</strong>
     <p>{{meal.description}}</p>
-    <p class="lead">{{meal.price}}</p>
+    <p class="lead">{{meal.price}} lv.</p>
     <div *ngIf="hasLoggedUser">
       <button *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</button>
       <button class="btn" [ngClass]="{'btn-success': !isFavourite, 'btn-warning': isFavourite}" (click)="changeLike()">{{likeButtonText}}</button>

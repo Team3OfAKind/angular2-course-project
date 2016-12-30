@@ -25,7 +25,7 @@ export class MealCartComponent implements OnInit {
   }
 
    removeFromCart() {
-    const mealPrice = +this.meal.price.split(' ')[0];
+    const mealPrice = this.meal.price;
     const totalMealPrice = mealPrice * this.meal.quantity;
     this.UserService.removeMealFromCart(this.meal)
       .subscribe((res) => {
@@ -43,7 +43,7 @@ export class MealCartComponent implements OnInit {
     this.UserService.updateMealCartQuantity(this.meal.name, changeBy)
       .subscribe((res) => {
         this.meal.quantity = event.target.value;
-        let price = +this.meal.price.split(' ')[0] * changeBy;
+        let price = this.meal.price * changeBy;
         this.onQuantityChanged.emit({price});
    
         this.notification.success('', res.result.message);

@@ -1,7 +1,7 @@
 export interface Meal{
     _id: string;
     name: string;
-    price: string;
+    price: number;
     imageLink: string;
     description: string;
     category: string;

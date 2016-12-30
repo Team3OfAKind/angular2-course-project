@@ -24,8 +24,8 @@ export class CartComponent implements OnInit {
         this.cartMeals = res.result.meals;
 
         this.cartMeals.forEach(meal => {
-          const mealPrice = +meal.price.split(' ')[0];
-          this.totalPrice += mealPrice * +meal.quantity;
+          const mealPrice = meal.price;
+          this.totalPrice += mealPrice * meal.quantity;
           this.totalPrice = +this.totalPrice.toFixed(2);
         });
       });

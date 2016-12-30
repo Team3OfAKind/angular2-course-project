@@ -23,10 +23,10 @@ export class SortPipe implements PipeTransform {
             let result;
             if (typeof x[sortType] === 'number'){
                 result = x[sortType] - y[sortType];
-            }else if(sortType === 'price'){
-                let priceX = + x[sortType].split(' ')[0];
-                let priceY = + y[sortType].split(' ')[0];
-                result = priceX - priceY;
+            // }else if(sortType === 'price'){
+            //     let priceX = + x[sortType].split(' ')[0];
+            //     let priceY = + y[sortType].split(' ')[0];
+            //     result = priceX - priceY;
             }
             else{
                 result = x[sortType].localeCompare(y[sortType]);

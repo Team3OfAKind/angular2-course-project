@@ -45,8 +45,8 @@ export class SubmitComponent implements OnInit {
         this.cartMeals = res.result.user.cartMeals;
 
         this.cartMeals.forEach(meal => {
-          const mealPrice = +meal.price.split(' ')[0];
-          this.totalPrice += mealPrice * +meal.quantity;
+          const mealPrice = meal.price;
+          this.totalPrice += mealPrice * meal.quantity;
           this.totalPrice = +this.totalPrice.toFixed(2);
         });
 
