@@ -17,7 +17,7 @@ export class SubmitComponent implements OnInit {
   totalPrice: number = 0;
   addresses: Address[] = [];
   haveAddress: boolean = false;
-  hideAddButtons: boolean;
+  hideAddButton: boolean;
   isAddressSelected: boolean = false;
   selectedAddress: Address;
 
@@ -26,7 +26,7 @@ export class SubmitComponent implements OnInit {
       .subscribe(address => {
         this.addresses.push(address);
         this.haveAddress = true;
-        this.hideAddButtons = false;
+        this.hideAddButton = false;
       })
   }
 
@@ -50,7 +50,7 @@ export class SubmitComponent implements OnInit {
   }
 
   addAddress() {
-    this.hideAddButtons = true;
+    this.hideAddButton = true;
   }
 
   useAddress(index) {
