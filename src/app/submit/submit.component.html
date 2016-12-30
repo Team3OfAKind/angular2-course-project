@@ -8,14 +8,23 @@
     </div>
     <div>
       <p>Total price: {{totalPrice}}</p>
+      <div><strong>Deliver to:</strong> 
+        <div *ngIf="isAddressSelected">
+          <p><strong>Address:</strong> {{selectedAddress.street}} <strong>City:</strong> {{selectedAddress.city}}</p>
+        </div>
+        <div *ngIf="!isAddressSelected">
+          <p>Please, select address </p>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="addresses">
     <div *ngIf="haveAddress">
-      <div *ngFor="let address of addresses">
+      <div *ngFor="let address of addresses; let i = index">
         <p><strong>Address:</strong> {{address.street}} <strong>City:</strong> {{address.city}}</p>
         <button class="btn btn-success">Use address</button>
+        <button class="btn btn-danger" (click)="removeAddress(i)">Remove address</button>
       </div>
       <br>
       <button class="btn btn-warning" [ngClass]="{'hidden': hideAddButtons}" (click)="addAddress()" routerLink="add-address">Add new address</button>

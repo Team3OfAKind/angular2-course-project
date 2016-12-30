@@ -38,6 +38,10 @@ export class UserService{
     }
 
     addAddress(address) {
-        return this.httpService.post(this.route + '/addresses', address);
+        return this.httpService.post(this.route + '/addresses/add', address);
+    }
+
+    removeAddress(address) {
+        return this.httpService.post(this.route + '/addresses/remove', address);
     }
 }

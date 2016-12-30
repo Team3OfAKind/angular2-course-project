@@ -18,6 +18,8 @@ export class SubmitComponent implements OnInit {
   addresses: Address[] = [];
   haveAddress: boolean = false;
   hideAddButtons: boolean;
+  isAddressSelected: boolean = false;
+  selectedAddress: Address;
 
   constructor(private UserService: UserService, private AddressService: AddressService) {
     AddressService.AddressAdded$
@@ -49,5 +51,15 @@ export class SubmitComponent implements OnInit {
 
   addAddress() {
     this.hideAddButtons = true;
+  }
+
+  removeAddress(index) {
+    this.UserService.removeAddress(this.addresses[index])
+      .subscribe((res) => {
+        this.addresses.splice(index, 1);
+        if (this.addresses.length < 1) {
+          this.haveAddress = false;
+        }
+      })
   }
 }
