@@ -1,16 +1,16 @@
-export class StorageService{
+export class StorageService {
     private _AuthToken = 'auth_token';
     private _Username = 'user_username';
 
-    getUsername() : string{
+    getUsername(): string {
         return localStorage.getItem(this._Username);
     }
 
-    setUsername(username: string){
+    setUsername(username: string) {
         localStorage.setItem(this._Username, username);
     }
 
-    getAuthtoken(): string{
+    getAuthtoken(): string {
         return localStorage.getItem(this._AuthToken);
     }
 
@@ -18,7 +18,7 @@ export class StorageService{
         localStorage.setItem(this._AuthToken, authtoken);
     }
 
-    removeUserInfo(){
+    removeUserInfo() {
         localStorage.removeItem(this._Username);
         localStorage.removeItem(this._AuthToken);
     }

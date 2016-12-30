@@ -1,6 +1,5 @@
 import {HttpService} from './http.service';
 import {Injectable} from '@angular/core';
-import {StorageService} from './storage.service';
 
 
 @Injectable()
