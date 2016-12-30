@@ -7,10 +7,11 @@
       </div>
     </div>
     <div>
-      <p>Total price: {{totalPrice}}</p>
+      <p><strong>Total price: {{totalPrice}}</strong></p>
       <div><strong>Deliver to:</strong> 
         <div *ngIf="isAddressSelected">
           <p><strong>Address:</strong> {{selectedAddress.street}} <strong>City:</strong> {{selectedAddress.city}}</p>
+          <button class="btn btn-primary" (click)="placeOrder()">Place order</button>
         </div>
         <div *ngIf="!isAddressSelected">
           <p>Please, select address </p>
@@ -23,15 +24,15 @@
     <div *ngIf="haveAddress">
       <div *ngFor="let address of addresses; let i = index">
         <p><strong>Address:</strong> {{address.street}} <strong>City:</strong> {{address.city}}</p>
-        <button class="btn btn-success">Use address</button>
+        <button *ngIf="selectedAddress != address" class="btn btn-success" (click)="useAddress(i)">Use address</button>
         <button class="btn btn-danger" (click)="removeAddress(i)">Remove address</button>
       </div>
       <br>
-      <button class="btn btn-warning" [ngClass]="{'hidden': hideAddButtons}" (click)="addAddress()" routerLink="add-address">Add new address</button>
+      <button *ngIf="!hideAddButtons" class="btn btn-warning" (click)="addAddress()" routerLink="add-address">Add new address</button>
     </div>
     <div *ngIf="!haveAddress">
       <p>You don't have any addresses yet</p>
-      <button class="btn btn-warning" [ngClass]="{'hidden': hideAddButtons}" (click)="addAddress()" routerLink="add-address">Add address</button>
+      <button *ngIf="hideAddButtons" class="btn btn-warning" (click)="addAddress()" routerLink="add-address">Add address</button>
     </div>
     <router-outlet></router-outlet>
   </div>

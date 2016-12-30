@@ -53,6 +53,11 @@ export class SubmitComponent implements OnInit {
     this.hideAddButtons = true;
   }
 
+  useAddress(index) {
+    this.selectedAddress = this.addresses[index];
+    this.isAddressSelected = true;
+  }
+
   removeAddress(index) {
     this.UserService.removeAddress(this.addresses[index])
       .subscribe((res) => {
