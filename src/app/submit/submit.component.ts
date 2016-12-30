@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserService } from '../../services/user.service';
 import { CartMeal } from '../../models/cart-meal-model';
 import { Address } from '../../models/address-model';
 
+import { UserService } from '../../services/user.service';
 import { AddressService } from '../../services/address.service';
 import { NotificationsService } from 'angular2-notifications';
 
@@ -20,8 +20,10 @@ export class SubmitComponent implements OnInit {
   addresses: Address[] = [];
   haveAddress: boolean = false;
   hideAddButton: boolean;
+
   isAddressSelected: boolean = false;
   selectedAddress: Address;
+  
   options: Object;
 
   constructor(
@@ -62,19 +64,16 @@ export class SubmitComponent implements OnInit {
     this.hideAddButton = true;
   }
 
-  useAddress(index) {
-    this.selectedAddress = this.addresses[index];
+  useAddress(event) {
+    this.selectedAddress = this.addresses[event.index];
     this.isAddressSelected = true;
   }
 
-  removeAddress(index) {
-    this.UserService.removeAddress(this.addresses[index])
-      .subscribe((res) => {
-        this.addresses.splice(index, 1);
-        if (this.addresses.length < 1) {
-          this.haveAddress = false;
-        }
-      })
+  removeAddress(event) {
+    this.addresses.splice(event.index, 1);
+    if (this.addresses.length < 1) {
+      this.haveAddress = false;
+    }
   }
 
   placeOrder() {

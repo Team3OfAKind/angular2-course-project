@@ -22,18 +22,19 @@
 
   <div class="addresses">
     <div *ngIf="haveAddress">
-      <div *ngFor="let address of addresses; let i = index">
-        <p><strong>Address:</strong> {{address.street}} <strong>City:</strong> {{address.city}}</p>
-        <button *ngIf="selectedAddress != address" class="btn btn-success" (click)="useAddress(i)">Use address</button>
-        <button class="btn btn-danger" (click)="removeAddress(i)">Remove address</button>
-      </div>
-      <br>
-      <button *ngIf="!hideAddButton" class="btn btn-warning" (click)="addAddress()" routerLink="add-address">Add new address</button>
+    <app-address *ngFor="let address of addresses; let i = index"
+    [address]="address"
+    [index]="i"
+    [selectedAddress]="selectedAddress"
+    (onAddressRemoved)="removeAddress($event)"
+    (selectedAddressChanged)="useAddress($event)">
+    </app-address> 
     </div>
     <div *ngIf="!haveAddress">
       <p>You don't have any addresses yet</p>
-      <button *ngIf="!hideAddButton" class="btn btn-warning" (click)="addAddress()" routerLink="add-address">Add address</button>
     </div>
+    <br>
+    <button *ngIf="!hideAddButton" class="btn btn-warning" (click)="addAddress()" routerLink="add-address">Add new address</button>
     <router-outlet></router-outlet>
   </div>
   <simple-notifications [options]="options "></simple-notifications>
