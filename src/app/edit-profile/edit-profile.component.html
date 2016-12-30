@@ -1,3 +1,32 @@
-<p>
-  edit-profile works!
-</p>
+<div class="container-fluid container">
+    <div class="col-sm-5 col-sm-offset-4">
+        <div class="form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Edit your profile information</h3>
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-pencil"></i>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <form [formGroup]="userInformation" #editForm="ngForm" class="edit-form" (ngSubmit)="editInformation(); editForm.reset()">
+                    <div class="form-group">
+                        <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name" formControlName="firstName">
+                        <span class="text-danger" *ngIf="!userInformation.controls['firstName'].valid && userInformation.controls['firstName'].touched">First name must be between 5 and 15 symbols.</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name" formControlName="lastName">
+                        <span class="text-danger" *ngIf="!userInformation.controls['lastName'].valid && userInformation.controls['lastName'].touched">Last name must be between 5 and 15 symbols.</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email" formControlName="email">
+                        <span class="text-danger" *ngIf="!userInformation.controls['email'].valid && userInformation.controls['email'].touched">Please enter valid email</span>
+                    </div>
+                    <button type="submit" class="btn btn-default regbutton">Save changes!</button>
+                </form>
+                <simple-notifications [options]="options "></simple-notifications>
+            </div>
+        </div>
+    </div>
+</div>

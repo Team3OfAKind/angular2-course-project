@@ -34,6 +34,6 @@ export const appRoutes: Routes = [
     { path: 'contacts', component: ContactsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    //{ path: 'profile/edit', component: EditProfileComponent, canActivate:[AuthGaurd] },
+    { path: 'profile/edit', component: EditProfileComponent, canActivate:[AuthGaurd] },
     { path: 'profile', component: ProfileComponent, canActivate:[AuthGaurd] },
 ];

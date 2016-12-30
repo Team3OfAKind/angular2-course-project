@@ -15,7 +15,10 @@
     </li>
   </ul>
 
+  <button class="btn btn-primary" routerLink="/profile/edit">Edit profile information</button>
+  <div>
   <strong>Favourite meals</strong>
+  </div>
   <ul>
     <meal-favourite *ngFor="let meal of user?.favouriteMeals; let i = index"
      [meal]="meal" 

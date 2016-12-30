@@ -12,7 +12,11 @@ export class UserService{
 
     getUserProfile(){
         return this.httpService.get(this.route+'/profile');
-    }   
+    }
+
+    updateUserInformation(newInformation){
+        return this.httpService.put(this.route+'/profile/edit', newInformation);
+    }  
 
     getCartMeals(){
         return this.httpService.get(this.route + '/cart');

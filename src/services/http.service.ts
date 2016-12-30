@@ -9,8 +9,8 @@ export class HttpService{
     private host: string;
 
     constructor(private http: Http, private storage:StorageService) {
-        // this.host = "http://localhost:3001/api/";
-        this.host = "https://restaurant-app-api.herokuapp.com/api/";       
+        this.host = "http://localhost:3001/api/";
+        // this.host = "https://restaurant-app-api.herokuapp.com/api/";       
     }
 
     get(url:string){
