@@ -20,7 +20,6 @@ export class SubmitComponent implements OnInit {
   addresses: Address[] = [];
   haveAddress: boolean = false;
   hideAddButton: boolean;
-
   isAddressSelected: boolean = false;
   selectedAddress: Address;
   
@@ -77,8 +76,16 @@ export class SubmitComponent implements OnInit {
   }
 
   placeOrder() {
-    //add order to user orders
-    this._notification.success('', 'Order placed successfully'); //res.result.message
-    setTimeout(() => this._router.navigateByUrl('/orders'), 2500);
+    const order = {
+      meals: this.cartMeals,
+      address: this.selectedAddress,
+      totalPrice: this.totalPrice,
+      orderDate: Date.now()
+    }
+    this.UserService.placeOrder(order)
+      .subscribe(res => {
+        this._notification.success('', res.result.message); 
+        setTimeout(() => this._router.navigateByUrl('/orders'), 2500);
+      });
   }
 }

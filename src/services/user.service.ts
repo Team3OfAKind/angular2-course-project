@@ -43,4 +43,12 @@ export class UserService{
     removeAddress(address) {
         return this.httpService.post(this.route + '/addresses/remove', address);
     }
+
+    getOrders() {
+        return this.httpService.get(this.route + '/orders');
+    }
+
+    placeOrder(order) {
+        return this.httpService.post(this.route + '/orders', order);
+    }
 }
