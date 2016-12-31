@@ -1,6 +1,6 @@
 <div id="header">
     <div class="content">
-        <h2>Your diet is a bank account. <br/> Good food choices are good investments! </h2>
+        <h2>{{info.moto.first}} <br/> {{info.moto.second}} </h2>
     </div>
 </div>
 <!-- /#header -->
@@ -11,27 +11,27 @@
     <section class="ss-style-top"></section>
     <div class="container inner">
         <h2 class="section-title text-center">Our Story</h2>
-        <p class="lead main text-center">We're cooking delecious foods since 1879</p>
+        <p class="lead main text-center">{{info.story}}</p>
         <div class="row text-center story">
             <div class="col-sm-4">
                 <div class="col-wrapper">
                     <div class="icon-wrapper"> <i class="fa fa-anchor"></i> </div>
-                    <h3>EST. 1879</h3>
-                    <p>Vivamus sagittis lacuson augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum ultricies vehicula.</p>
+                    <h3>EST. {{info.establishedYear}}</h3>
+                    <p>{{info.establishedStory}}</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="col-wrapper">
                     <div class="icon-wrapper"> <i class="fa  fa-cutlery"></i> </div>
                     <h3>Cooking Traditions</h3>
-                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient monte nascetur ultricies vehicula. </p>
+                    <p>{{info.traditions}}</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="col-wrapper">
                     <div class="icon-wrapper"> <i class="fa fa-coffee"></i> </div>
                     <h3>Food Quality</h3>
-                    <p>Curabitur blandit matti tempus porttitor. Donec id elit non mi porta ut gravida at eget metus. Consectetur adipiscing elit ultricies vehicula.</p>
+                    <p>{{info.foodQuality}}</p>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-beer"></i> </div>
-                    <h4>796518</h4>
+                    <h4>{{info.statistics.beersSold}}</h4>
                     <p>Mug of Beer Sold</p>
                 </div>
             </div>
@@ -62,14 +62,14 @@
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-truck"></i> </div>
-                    <h4>2188764</h4>
-                    <p>Pizza Deleverd</p>
+                    <h4>{{info.statistics.mealsDelivered}}</h4>
+                    <p>Meals Delivered</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-users"></i> </div>
-                    <h4>480523</h4>
+                    <h4>{{info.statistics.customersCount}}</h4>
                     <p>Customers Worldwide</p>
                 </div>
             </div>

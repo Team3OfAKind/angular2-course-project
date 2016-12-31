@@ -2,8 +2,7 @@
     <div class="icon-wrapper"> <i class="fa fa-users"></i> </div>
     <h2 class="section-title text-center">Who are we</h2>
     <hr>
-    <p class="lead main text-center context">Paradise is the fastest and easiest way to order food wherever you are. With just a few clicks you can select and order from our restaurants, which are throughout the country. Whether you love pizza, burgers, Bulgarian or Italian in Paradise you will
-        find the largest selection of meals. Just select order and get your delivery faster then you think. Besides delivery, you can order on the go and take your food directly from the restaurant with our new service.</p>
+    <p class="lead main text-center context">{{info.detailedDescription}}</p>
 </div>
 <!-- /#header -->
 
@@ -13,27 +12,27 @@
     <section class="ss-style-top"></section>
     <div class="container inner">
         <h2 class="section-title text-center">Delivery</h2>
-        <p class="lead main text-center">Delivery is made by the establishment or by specialized courier company.</p>
+        <p class="lead main text-center">{{info.delivery.description}}</p>
         <div class="row text-center story">
             <div class="col-sm-4">
                 <div class="col-wrapper">
                     <div class="icon-wrapper"> <i class="fa fa-money"></i> </div>
                     <h3>Cost of Delivery</h3>
-                    <p>Each institution only determines the price for delivery according to the contract value and the remoteness of the place of that shipping address.</p>
+                    <p>{{info.delivery.cost}}</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="col-wrapper">
                     <div class="icon-wrapper"> <i class="fa  fa-clock-o"></i> </div>
                     <h3>Delivery time</h3>
-                    <p>You can see the time for which each restaurant delivers in the upper right corner of the page above his menu. In 90% of orders, your food will arrive in 50 minutes or less.</p>
+                    <p>{{info.delivery.time}}</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="col-wrapper">
                     <div class="icon-wrapper"> <i class="fa fa-shopping-bag "></i> </div>
                     <h3>Get yourself</h3>
-                    <p>You can order and get yourself your order from the restaurant on the way home or office. In this case you pay Shipping, only the value of the ordered food.</p>
+                    <p>{{info.delivery.noDeliveryOrder}}</p>
                 </div>
             </div>
         </div>
@@ -50,28 +49,28 @@
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-pie-chart"></i> </div>
-                    <h4 style="color: black;">796518</h4>
+                    <h4 style="color: black;">{{info.statistics.pizzasEaten}}</h4>
                     <p>Pizzas Eaten</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-clock-o"></i> </div>
-                    <h4 style="color: black;">39472</h4>
+                    <h4 style="color: black;">{{info.statistics.bestTime}}</h4>
                     <p>Best Time</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-truck"></i> </div>
-                    <h4 style="color: black;">2188764</h4>
-                    <p>Orders Deleverd</p>
+                    <h4 style="color: black;">{{info.statistics.mealsDelivered}}</h4>
+                    <p>Orders Delivered</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-users"></i> </div>
-                    <h4 style="color: black;">480523</h4>
+                    <h4 style="color: black;">{{info.statistics.customersCount}}</h4>
                     <p>Customers Worldwide</p>
                 </div>
             </div>

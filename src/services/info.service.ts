@@ -9,4 +9,12 @@ export class InfoService{
     getPhotos(){
         return this.httpService.get('gallery');
     }
+
+    getRestaurantInfo(){
+        return this.httpService.get('info');
+    }
+
+    getRestaurantContacts(){
+        return this.httpService.get('contacts');
+    }
 }
