@@ -1,7 +1,36 @@
-img{
-    width: 50%;
+.main-container {
+    padding-top: 10%;
+    background: url('../../assets/images/background.jpg') fixed no-repeat center center;
+    width: 100%;
 }
 
-.profile{
-    margin-top:10em;
+.light-wrapper {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.col-wrapper {
+    text-align: center;
+}
+
+.icon-wrapper {
+    float: left;
+    width: 20%;
+    height: 20%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.info {
+    padding-top: 20px;
+}
+
+.favourite-meals {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 25px;
+    padding-top: 25px;
+    border-bottom: 1px solid rgba(54, 65, 76, 0.6);
+    border-width: 80%;
 }

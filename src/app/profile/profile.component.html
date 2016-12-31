@@ -1,30 +1,63 @@
-<div class="container profile">
-  <div class="col-md-2">
-    <img alt="profile image" [src]="user?.image">
-  </div>
-  <div class="col-md-10">
-    <h2>{{user?.firstName}} {{user?.lastName}}</h2>
-    <h3>{{user?.username}}</h3>
+<!--<div class="container profile">
+    <div class="col-md-2">
+        <img alt="profile image" [src]="user?.image">
+    </div>
+    <div class="col-md-10">
+        <h2>{{user?.firstName}} {{user?.lastName}}</h2>
+        <h3>{{user?.username}}</h3>
 
-    <p>Email: {{user?.email}}</p>
-  </div>
-  <strong>Addresses</strong>
-  <ul>
-    <li *ngFor="let address of user?.addresses">
-      {{address.city}}, {{address.street}}
-    </li>
-  </ul>
+        <p>Email: {{user?.email}}</p>
+    </div>
+    <strong>Addresses</strong>
+    <ul>
+        <li *ngFor="let address of user?.addresses">
+            {{address.city}}, {{address.street}}
+        </li>
+    </ul>
 
-  <button class="btn btn-primary" routerLink="/profile/edit">Edit profile information</button>
-  <div>
-  <strong>Favourite meals</strong>
-  </div>
-  <ul>
-    <meal-favourite *ngFor="let meal of user?.favouriteMeals; let i = index"
-     [meal]="meal" 
-     [user]="user" 
-     [index]="i"
-     (onDislike)=removeFromFavourite($event)>
-    </meal-favourite>
-  </ul>
+    <button class="btn btn-primary" routerLink="/profile/edit">Edit profile information</button>
+    <div>
+        <strong>Favourite meals</strong>
+    </div>
+    <ul>
+        <meal-favourite *ngFor="let meal of user?.favouriteMeals; let i = index" [meal]="meal" [user]="user" [index]="i" (onDislike)=removeFromFavourite($event)>
+        </meal-favourite>
+    </ul>
+</div>-->
+
+
+<div class="container main-container">
+    <h2 class="section-title text-center">Profile</h2>
+    <p class="lead main text-center">Hey that's your information!</p>
+    <div id="food-menu " class="light-wrapper ">
+        <section class="ss-style-top "></section>
+        <div class="col-wrapper">
+            <div class="icon-wrapper">
+                <img alt="profile image" [src]="user?.image">
+            </div>
+            <div class="info">
+                <h2>{{user?.firstName}} {{user?.lastName}}</h2>
+                <h3>{{user?.username}}</h3>
+                <p>Email: {{user?.email}}</p>
+
+                <strong>Addresses</strong>
+                <ul>
+                    <li *ngFor="let address of user?.addresses">
+                        {{address.city}}, {{address.street}}
+                    </li>
+                </ul>
+
+                <button class="btn btn-primary" routerLink="/profile/edit">Edit profile information</button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="favourite-meals">
+            Favourite meals
+        </div>
+        <ul>
+            <meal-favourite *ngFor="let meal of user?.favouriteMeals; let i = index" [meal]="meal" [user]="user" [index]="i" (onDislike)=removeFromFavourite($event)>
+            </meal-favourite>
+        </ul>
+        <section class="ss-style-bottom "></section>
+    </div>
 </div>

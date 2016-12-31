@@ -144,7 +144,9 @@ header {
     padding-bottom: 0;
 }
 
+
 /*.navbar-inverse .navbar-nav>li>a {*/
+
 .navbar-inverse .navbar-nav li a {
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -154,8 +156,10 @@ header {
     font-weight: bold;
 }
 
+
 /*.navbar-inverse .navbar-nav>li>a:hover,
 .navbar-inverse .navbar-nav>.active>a {*/
+
 .navbar-inverse .navbar-nav li a:hover,
 .navbar-inverse .navbar-nav .active>a {
     background-color: #5383D3;
