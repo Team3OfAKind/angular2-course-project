@@ -1,0 +1,9 @@
+.container.inner {
+    padding-top: 10%;
+    background: url('../../assets/images/background.jpg') fixed no-repeat center center;
+    width: 100%;
+}
+
+.row {
+    background-color: rgba(255, 255, 255, 0.6)
+}
