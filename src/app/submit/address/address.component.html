@@ -1,3 +1,5 @@
-<p><strong>Address:</strong> {{address.street}} <strong>City:</strong> {{address.city}}</p>
-<button *ngIf="selectedAddress != address" class="btn btn-success" (click)="useAddress()">Use address</button>
-<button class="btn btn-danger" (click)="removeAddress()">Remove address</button>
+<li>
+    <p><strong>Address:</strong> {{address.street}} <strong>City:</strong> {{address.city}}</p>
+    <button *ngIf="selectedAddress != address" class="btn btn-success" (click)="useAddress()">Use address</button>
+    <button class="btn btn-danger" (click)="removeAddress()">Remove address</button>
+</li>

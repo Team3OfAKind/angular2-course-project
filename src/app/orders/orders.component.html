@@ -1,9 +1,12 @@
 <div class="wrapper">
   <div class="orders">
-    <div *ngFor="let order of orders">
-      <p><strong>Delivered to: </strong>{{order.address.street}}, {{order.address.street}}</p>
-      <p><strong>Price: </strong>{{order.totalPrice}} lv.</p>
-      <p><strong>Ordered on: </strong>{{order.orderDate}}</p>
+    <ul *ngIf="haveOrders">
+        <app-order *ngFor="let order of orders"
+        [order]="order">
+        </app-order>
+    </ul>
+    <div *ngIf="!haveOrders">
+      <p>You have no orders.</p>
     </div>
   </div>
 </div>

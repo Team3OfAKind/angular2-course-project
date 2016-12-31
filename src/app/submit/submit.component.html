@@ -21,15 +21,15 @@
   </div>
 
   <div class="addresses">
-    <div *ngIf="haveAddress">
-    <app-address *ngFor="let address of addresses; let i = index"
-    [address]="address"
-    [index]="i"
-    [selectedAddress]="selectedAddress"
-    (onAddressRemoved)="removeAddress($event)"
-    (selectedAddressChanged)="useAddress($event)">
-    </app-address> 
-    </div>
+    <ul *ngIf="haveAddress">
+      <app-address *ngFor="let address of addresses; let i = index"
+      [address]="address"
+      [index]="i"
+      [selectedAddress]="selectedAddress"
+      (onAddressRemoved)="removeAddress($event)"
+      (selectedAddressChanged)="useAddress($event)">
+      </app-address> 
+    </ul>
     <div *ngIf="!haveAddress">
       <p>You don't have any addresses yet</p>
     </div>

@@ -76,12 +76,15 @@ export class SubmitComponent implements OnInit {
   }
 
   placeOrder() {
+    const dateNow = new Date();
     const order = {
       meals: this.cartMeals,
       address: this.selectedAddress,
       totalPrice: this.totalPrice,
-      orderDate: Date.now()
+      orderDate: dateNow,
+      orderDateString: dateNow.toLocaleString()
     }
+
     this.UserService.placeOrder(order)
       .subscribe(res => {
         this._notification.success('', res.result.message); 

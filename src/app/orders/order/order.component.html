@@ -1,0 +1,16 @@
+<li>
+  <p><strong>Delivered to: </strong>{{order.address.street}}, {{order.address.city}}</p>
+  <p><strong>Price: </strong>{{order.totalPrice}} lv.</p>
+  <p><strong>Ordered on: </strong>{{order.orderDateString}}</p>
+  <button class="btn btn-primary" (click)="toggleDetails()">{{buttonText}}</button>
+
+  <ul class="details" *ngIf="displayDetails">
+    <li *ngFor="let meal of order.meals">
+      <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
+      <div class="meal-info">
+        <strong>{{meal.name}}</strong>
+        <p>{{meal.price}} lv. Quantity: {{meal.quantity}}</p>
+      </div>
+    </li>
+  </ul>
+</li>
