@@ -1,4 +1,4 @@
-<li>
+<!--<li>
     <img [src]="meal.imageLink" [alt]="meal.name">
     <div class="meal-info">
         <strong>{{meal.name}}</strong>
@@ -10,4 +10,40 @@
         </p>
         <simple-notifications [options]="options "></simple-notifications>
     </div>
-</li>
+</li>-->
+
+
+<div id="special-offser" class="parallax pricing">
+    <div class="container inner">
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+
+                <div class="pricing-item">
+
+                    <a href="/"><img [src]="meal.imageLink" [alt]="meal.name" class="img-responsive img-thumbnail"></a>
+
+                    <div class="pricing-item-details">
+
+                        <h3><a href="/">{{meal.name}}</a></h3>
+                        <div class="quantity">
+                            Quantity:
+                            <input type="number" name="quantity" [value]="meal.quantity" (change)="updateQuantity($event)" min="1" max="999">
+                        </div>
+                        <a *ngIf="!isInCart" class="btn btn-danger" (click)="removeFromCart()">Remove from cart</a>
+                        <simple-notifications [options]="options "></simple-notifications>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!--price tag-->
+                    <span class="hot-tag br-red">{{meal.price}} lv.</span>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#special-offser -->

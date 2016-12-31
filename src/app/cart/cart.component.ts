@@ -6,7 +6,7 @@ import { NotificationsService } from 'angular2-notifications';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['../app.component.css', './cart.component.css']
 })
 export class CartComponent implements OnInit {
 

@@ -1,7 +1,55 @@
-ul{
+.main-container {
+    padding-top: 10%;
+    background: url('../../assets/images/background.jpg') fixed no-repeat center center;
+    width: 100%;
+}
+
+img {
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+ul {
     list-style-type: none;
 }
 
-.wrapper {
-    padding: 50px;
+.menu-categories {
+    background-color: rgba(54, 65, 76, 0.2);
+}
+
+.category a {
+    color: black;
+    font-weight: bold;
+}
+
+.light-wrapper {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.total-price {
+    text-align: center;
+}
+
+.total-price p {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.total-price span {
+    font-size: 22px;
+    font-weight: bold;
+    color: darkred;
+}
+
+.total-price .button-wrapper {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.total-price .ss-style-bottom {
+    padding: 20px;
 }
