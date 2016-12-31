@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['../app.component.css', './menu.component.css']
 })
 export class MenuComponent implements OnInit {
   user: User;
