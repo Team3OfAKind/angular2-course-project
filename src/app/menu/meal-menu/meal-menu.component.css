@@ -30,16 +30,17 @@ ul {
     background-color: #51d466 !important;
 }
 
-.pricing {}
-
 .pricing .pricing-item {
     position: relative;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .pricing .pricing-item img {
-    max-width: 250px;
+    max-width: 200px;
+    max-height: 250px;
     float: left;
 }
 

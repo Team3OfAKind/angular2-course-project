@@ -3,29 +3,7 @@
     <p class="lead main text-center">There is no sincerer love than the love of food!</p>
     <div id="food-menu " class="light-wrapper ">
         <section class="ss-style-top "></section>
-        <div class="inputs">
-            <div class="input-group stylish-input-group">
-                <input type="text" [(ngModel)]="searchWord " class="form-control" placeholder="Search...">
-                <span class="input-group-addon">
-            <button type="submit">
-                <span class="glyphicon glyphicon-search"></span>
-                </button>
-                </span>
-            </div>
-            <div class="form-group ">
-                <label for="sort-type ">Sort by</label>
-                <select class="form-control " id="sort-type " [(ngModel)]="sortType ">
-                        <option *ngFor="let type of sortTypes " [value]="type ">{{type}}</option>
-                    </select>
-                <label for="sort-order ">Order in</label>
-                <select class="form-control " id="sort-order " [(ngModel)]="sortOrder ">
-                        <option *ngFor="let order of sortOrders " [value]="order ">{{order}}</option>
-                    </select>
-
-            </div>
-        </div>
-
-        <div class="container inner ">
+        <div class="container">
             <div class="row ">
                 <div class="col-xs-6 col-sm-6 ">
 
@@ -35,18 +13,17 @@
                                 <div class="sidebar-nav ">
                                     <div class="navbar navbar-default " role="navigation ">
                                         <div class="navbar-header ">
-                                            <button type="button " class="navbar-toggle " data-toggle="collapse " data-target=".sidebar-navbar-collapse ">
+                                            <button type="button " class="navbar-toggle " data-toggle="collapse " data-target=".navbar-collapse.collapse.sidebar-navbar-collapse ">
                                                 <span class="sr-only ">Toggle navigation</span>
                                                 <span class="icon-bar "></span>
                                                 <span class="icon-bar "></span>
                                                 <span class="icon-bar "></span>
                                             </button>
-                                            <span class="visible-xs navbar-brand ">Sidebar menu</span>
                                         </div>
                                         <div class="navbar-collapse collapse sidebar-navbar-collapse ">
-                                            <ul class="nav navbar-nav ">
-                                                <li class="active "><a routerLink="/menu/All " routerLinkActive="active ">All</a></li>
-                                                <li *ngFor="let current of categories; let i=i ndex "><a [routerLink]="[ '/menu', current] " routerLinkActive="active ">{{current}}</a></li>
+                                            <ul class="nav navbar-nav">
+                                                <li class="active categories"><a routerLink="/menu/All " routerLinkActive="active ">All</a></li>
+                                                <li class="categories" *ngFor="let current of categories; let i=i ndex "><a [routerLink]="[ '/menu', current] " routerLinkActive="active ">{{current}}</a></li>
                                             </ul>
                                         </div>
                                         <!--/.nav-collapse -->
@@ -54,6 +31,27 @@
                                 </div>
                             </div>
                             <div class="col-sm-9 components ">
+                                    <div class="inputs">
+                                        <div class="input-group stylish-input-group">
+                                            <input type="text" [(ngModel)]="searchWord " class="form-control" placeholder="Search...">
+                                            <span class="input-group-addon">
+                                        <button type="submit">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                            </span>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="sort-type ">Sort by</label>
+                                            <select class="form-control " id="sort-type " [(ngModel)]="sortType ">
+                                                    <option *ngFor="let type of sortTypes " [value]="type ">{{type}}</option>
+                                                </select>
+                                            <label for="sort-order ">Order in</label>
+                                            <select class="form-control " id="sort-order " [(ngModel)]="sortOrder ">
+                                                    <option *ngFor="let order of sortOrders " [value]="order ">{{order}}</option>
+                                                </select>
+
+                                        </div>
+                                    </div>
                                 <ul>
                                     <li style="float:left ">
                                         <meal-menu class="container " *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder; " [meal]="meal " [user]="user ">

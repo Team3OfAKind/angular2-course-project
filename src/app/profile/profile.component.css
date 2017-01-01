@@ -34,3 +34,7 @@
     border-bottom: 1px solid rgba(54, 65, 76, 0.6);
     border-width: 80%;
 }
+
+.navbar-toggle {
+    z-index: 5;
+}
