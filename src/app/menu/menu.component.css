@@ -9,6 +9,11 @@
     margin: 0;
 }
 
+.light-wrapper {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
 img {
     height: 100px;
     display: inline-block;
@@ -28,19 +33,17 @@ ul {
     font-weight: bold;
 }
 
-#food-menu {
-    background-color: rgba(255, 255, 255, 0.6)
-}
-
 .navbar-nav li {
     display: block;
 }
 
 .stylish-input-group .input-group-addon {
+    z-index: 5;
     background: white !important;
 }
 
 .stylish-input-group .form-control {
+    z-index: 5;
     border-right: 0;
     box-shadow: 0 0 0;
     border-color: #ccc;
@@ -63,4 +66,8 @@ ul {
 
 .navbar-nav>li:checked{
     background-color: #E0E0E0;
+}
+
+.form-group {
+    z-index: 5;
 }
