@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { ErrorComponent } from './error-page.component';
 
@@ -6,7 +7,7 @@ import { ErrorComponent } from './error-page.component';
   declarations: [
     ErrorComponent
   ],
-  imports: [],
+  imports: [RouterModule],
   exports: [],
   providers: []
 })
