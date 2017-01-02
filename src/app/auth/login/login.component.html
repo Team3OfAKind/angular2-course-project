@@ -20,7 +20,9 @@
     <simple-notifications [options]="options "></simple-notifications>
 </div>-->
 <!--</div>-->
+
 <div class="container main-container">
+
     <div class="col-sm-5 col-sm-offset-4">
         <div class="form-box">
             <div class="form-top">
@@ -41,16 +43,17 @@
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="form-password">Password</label>
-                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" formControlName="password">
+                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"
+                            formControlName="password">
                         <span class="text-danger" *ngIf="!userToLogin.controls['password'].valid && userToLogin.controls['password'].touched">Please enter your password</span>
                     </div>
-                    <button type="submit" class="btn btn-default login">Sign in!</button>
+                    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-default login">Sign in!</button>
                 </form>
-                <simple-notifications [options]="options "></simple-notifications>
             </div>
         </div>
+        <simple-notifications [options]="options"></simple-notifications>
 
-        <div class="social-login">
+        <!--<div class="social-login">
             <h3>...or login with:</h3>
             <div class="social-login-buttons">
                 <a class="btn btn-link-2 btn-link-1-facebook" href="#">
@@ -63,6 +66,7 @@
                     <i class="fa fa-google-plus"></i> Google Plus
                 </a>
             </div>
-        </div>
+        </div>-->
     </div>
+
 </div>
