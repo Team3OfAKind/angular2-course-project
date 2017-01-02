@@ -50,6 +50,8 @@ export class OrdersComponent implements OnInit {
             this.havePastOrders = true;
           }
         }
+        this.pastOrders.reverse();
+        this.activeOrders.reverse();
       });
   }
 

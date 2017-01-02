@@ -8,15 +8,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from '../../services/auth.service';
 import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifications';
-// const routes: Routes = [
-//   { path: 'register', component: RegisterComponent },
-//   { path: 'login', component: LoginComponent }
-// ];
 
 @NgModule({
   imports: [
     CommonModule,
-    //RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
     SimpleNotificationsModule,

@@ -27,8 +27,6 @@ export class MealMenuComponent implements OnInit {
         if (this.user) {
             this.hasLoggedUser = true;
             this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
-            //this.isFavourite = false;
-
             this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
             this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';            
             
@@ -40,7 +38,6 @@ export class MealMenuComponent implements OnInit {
         if (this.user) {
             this.hasLoggedUser = true;
             this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
-            //this.isFavourite = false;
             this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
             this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';            
         }
