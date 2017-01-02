@@ -1,7 +1,59 @@
-.wrapper {
-    padding: 10%
+.main-container {
+    padding-top: 10%;
+    background: url('../../assets/images/background.jpg') fixed no-repeat center center;
+    width: 100%;
+}
+
+img {
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
 }
 
 ul {
     list-style-type: none;
+}
+
+.menu-categories {
+    background-color: rgba(54, 65, 76, 0.2);
+}
+
+.category a {
+    color: black;
+    font-weight: bold;
+}
+
+.light-wrapper {
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.label {
+    margin: 10px;
+}
+
+@media (max-width: 767) {
+    /* your custom css class on a parent will increase specificity */
+    /* so this rule will override Bootstrap's font size setting */
+    .label {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .label {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .label {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .label {
+        font-size: 20px;
+    }
 }

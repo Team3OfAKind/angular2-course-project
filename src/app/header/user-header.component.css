@@ -1,4 +1,4 @@
-li{
+li {
     display: inline-block;
 }
 
@@ -11,8 +11,13 @@ li a {
     font-weight: bold;
 }
 
- li a:hover, .active>a {
+li a:hover,
+.active>a {
     background-color: #5383D3;
     color: white;
     text-shadow: none;
+}
+
+.logout {
+    cursor: pointer;
 }
