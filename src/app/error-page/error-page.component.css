@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    background-image: url('../../assets/images/6776451_stock-photo-vintage-recipe-book-utensils-and-ingredients.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.error-template {
+    padding: 150px 50px;
+    text-align: center;
+    color: white
+}
+
+.error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.error-actions .btn {
+    margin-right: 10px;
+}

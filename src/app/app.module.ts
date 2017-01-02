@@ -17,6 +17,7 @@ import { OrdersModule } from './orders/orders.module';
 import { ProfileModule } from './profile/profile.module';
 import { EditProfileModule } from './edit-profile/edit-profile.module';
 import { LoadingAnimateModule } from './animations/animation.module';
+import { ErrorModule } from './error-page/error-page.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -66,7 +67,8 @@ import { appRoutes } from './app.routes';
     AddAddressModule,
     OrdersModule,
     ProfileModule,
-    EditProfileModule
+    EditProfileModule,
+    ErrorModule
   ],
   providers: [
     MealsService, 
