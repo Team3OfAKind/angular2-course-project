@@ -10,11 +10,11 @@ export class InfoService{
         return this.httpService.get('gallery');
     }
 
-    getRestaurantInfo(){
+    getRestaurantInfo() {
         return this.httpService.get('info');
     }
 
-    getRestaurantContacts(){
+    getRestaurantContacts() {
         return this.httpService.get('contacts');
     }
 }

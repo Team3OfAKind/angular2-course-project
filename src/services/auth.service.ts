@@ -42,25 +42,4 @@ export class AuthService {
     logout(): void {
         this.storage.removeUserInfo();
     }
-
-    // isLoggedIn(): boolean {
-    //     return this.loggedIn;
-    // }
-
-    // getLoggedUser(): Observable<any> {
-    //     let headers = new Headers({ 'Content-Type': 'application/json' });
-    //     let options = new RequestOptions({ headers: headers });
-    //     this.createAuthorizationHeader(headers);
-
-    //     return this._http.get(GetLoggedUserUrl, options)
-    //         .map((res: Response) => {
-    //             let body = res.json();
-    //             return { status: res.status, body: body };
-    //         })
-    // }
-
-    // createAuthorizationHeader(headers: Headers) {
-    //     let authToken = localStorage.getItem(AuthToken);
-    //     headers.append('Authorization', authToken);
-    // }
 }

@@ -21,8 +21,7 @@ export class SortPipe implements PipeTransform {
             let result;
             if (typeof x[sortType] === 'number') {
                 result = x[sortType] - y[sortType];
-            }
-            else {
+            } else {
                 result = x[sortType].localeCompare(y[sortType]);
             }
 

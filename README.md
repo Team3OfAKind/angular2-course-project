@@ -3,6 +3,10 @@ _Single-page Applications with Angular 2_
 
 Visit it at:
 
+**paradiserestaurant.herokuapp.com**
+
+Visit our page to learn more about our restaurant and order delicious food. You can add meals to your personal favourites or directly add them to your cart. You can save a number of different addresses and see all your past orders.
+
 ## Team members
 | Name | [Student system](https://telerikacademy.com) username | [Github](https://github.com) username|
 |:----|:-----------------------|:-----------------------------|
@@ -33,29 +37,33 @@ Visit it at:
     - menu/:category - additional functionality
 
 ### Pipes
-1. Filter by category
-1. Search meals
-1. Sort meals
+- Filter by category
+- Search meals
+- Sort meals
+- Pagination
 
 ### Directives
-1. Zoom in gallery image
-2. Zoom out gallery image
-3. Change color of header link on hover
+- Zoom in gallery image
+- Zoom out gallery image
+- Change color of header link on hover
 
 ### Gaurds
-1. Auth gaurd
+- Auth gaurd
 
 ### Partial components
-1. Header
-1. User panel header
-1. Footer
-1. Meal in menu
-1. Meal in cart
-1. Favourite meal in profile
-1. Address in submit page
-1. Animation
-1. Order
-1. Loading app
+- Header
+- User panel header
+- Footer
+- Meal in menu
+- Meal in cart
+- Favourite meal in profile
+- Address in submit page
+- Add address
+- Order
+
+### Animations
+- Contacts page
+- Orders page
 
 ### Back-end
 Node.js server

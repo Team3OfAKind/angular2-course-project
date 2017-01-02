@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LoadingAnimateComponent } from './loading-animation/loading-animation.component';
 import { LoadingAnimateService } from '../../services/loading.service';
 
-export * from '../../services/loading.service';
-
 @NgModule({
   declarations: [
     LoadingAnimateComponent

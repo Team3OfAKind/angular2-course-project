@@ -1,28 +1,4 @@
-<!--<div class="modal-dialog">-->
-<!--<div class="loginmodal-container">-->
-<!--<div class="container-fluid">
-    <h1>Login to Your Account</h1><br>
-    <form [formGroup]="userToLogin" #loginForm="ngForm" class="login-form" (ngSubmit)="login()">
-        <div class="col-md-4 col-sm-4 col-lg-4" [ngClass]="{'has-error':!userToLogin.controls['username'].valid}">
-            <label for="username ">Username</label>
-            <input name="username " class="form-control " type="text " formControlName="username">
-            <span class="text-danger" *ngIf="!userToLogin.controls['username'].valid && userToLogin.controls['username'].touched">Please enter you username</span>
-        </div>
-        <div class="col-md-4 col-sm-4 col-lg-4">
-            <label for="password ">password</label>
-            <input name="password" class="form-control " type="password" formControlName="password">
-            <span class="text-danger" *ngIf="!userToLogin.controls['password'].valid && userToLogin.controls['password'].touched">Please enter your password</span>
-        </div>
-        <div class="col-md-4 col-sm-4 col-lg-4">
-            <button class="btn btn-default login" [disabled]="!userToLogin.valid">Login</button>
-        </div>
-    </form>
-    <simple-notifications [options]="options "></simple-notifications>
-</div>-->
-<!--</div>-->
-
 <div class="container main-container">
-
     <div class="col-sm-5 col-sm-offset-4">
         <div class="form-box">
             <div class="form-top">
@@ -43,8 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="form-password">Password</label>
-                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password"
-                            formControlName="password">
+                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" formControlName="password">
                         <span class="text-danger" *ngIf="!userToLogin.controls['password'].valid && userToLogin.controls['password'].touched">Please enter your password</span>
                     </div>
                     <button [disabled]="!loginForm.valid" type="submit" class="btn btn-default login">Sign in!</button>
@@ -52,21 +27,6 @@
             </div>
         </div>
         <simple-notifications [options]="options"></simple-notifications>
-
-        <!--<div class="social-login">
-            <h3>...or login with:</h3>
-            <div class="social-login-buttons">
-                <a class="btn btn-link-2 btn-link-1-facebook" href="#">
-                    <i class="fa fa-facebook"></i> Facebook
-                </a>
-                <a class="btn btn-link-2 btn-link-1-twitter" href="#">
-                    <i class="fa fa-twitter"></i> Twitter
-                </a>
-                <a class="btn btn-link-2 btn-link-1-google-plus" href="#">
-                    <i class="fa fa-google-plus"></i> Google Plus
-                </a>
-            </div>
-        </div>-->
     </div>
 
 </div>

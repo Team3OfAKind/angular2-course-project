@@ -25,13 +25,13 @@ export class HttpService {
     put(url: string, body) {
         const options = this.getRequestOptions();
         return this.http.put(`${this.host}${url}`, body, options)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 
     post(url: string, body) {
         const options = this.getRequestOptions();
         return this.http.post(`${this.host}${url}`, body, options)
-            .map((res: Response) => res.json())
+            .map((res: Response) => res.json());
     }
 
     private getRequestOptions(): RequestOptions {

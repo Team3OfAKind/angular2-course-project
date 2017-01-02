@@ -8,7 +8,6 @@ import { SearchPipe } from '../../pipes/search.pipe';
 import { FilterByCategoryPipe } from '../../pipes/filterByCategory.pipe';
 import { SortPipe } from '../../pipes/sort.pipe';
 import { SimpleNotificationsModule, NotificationsService } from 'angular2-notifications';
-// import {Ng2PaginationModule} from 'ng2-pagination';
 
 @NgModule({
   declarations: [

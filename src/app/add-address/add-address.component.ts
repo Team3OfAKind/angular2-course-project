@@ -18,8 +18,8 @@ export class AddAddressComponent implements OnInit {
   options: Object;
 
   constructor(
-    private UserService: UserService, 
-    private notification: NotificationsService, 
+    private UserService: UserService,
+    private notification: NotificationsService,
     private fb: FormBuilder,
     private AddressService: AddressService,
     private _router: Router) { }

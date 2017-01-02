@@ -1,50 +1,23 @@
-<!--<li class="container">
-    <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
-    <div class="meal-info">
-        <strong>{{meal.name}}</strong>
-        <p>{{meal.description}}</p>
-        <p class="lead">{{meal.price}}</p>
-        <div *ngIf="hasLoggedUser">
-            <button *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</button>
-            <button class="btn" [ngClass]="{'btn-success': !isFavourite, 'btn-warning': isFavourite}" (click)="changeLike()">{{likeButtonText}}</button>
-        </div>
-        <simple-notifications [options]="options "></simple-notifications>
-    </div>
-</li>-->
-
-
 <div id="special-offser" class="parallax pricing">
     <div class="container inner">
-
         <div class="row">
             <div class="col-md-6 col-sm-6">
-
                 <div class="pricing-item">
-
                     <a href="/"><img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive img-thumbnail"></a>
-
                     <div class="pricing-item-details">
-
                         <h3><a href="/">{{meal.name}}</a></h3>
-
                         <p>{{meal.description}}</p>
                         <p>{{meal.likes}} customers liked it!</p>
                         <div *ngIf="hasLoggedUser" class="buttons">
                             <a *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</a>
                             <a class="btn" [ngClass]="{'btn-success': !isFavourite, 'btn-warning': isFavourite}" (click)="changeLike()">{{likeButtonText}}</a>
                         </div>
-                        <!--<simple-notifications [options]="options "></simple-notifications>-->
                         <div class="clearfix"></div>
                     </div>
-                    <!--price tag-->
                     <span class="hot-tag br-red">{{meal.price.toFixed(2)}}</span>
                     <div class="clearfix"></div>
                 </div>
             </div>
-
         </div>
-
     </div>
-    <!-- /.container -->
 </div>
-<!-- /#special-offser -->

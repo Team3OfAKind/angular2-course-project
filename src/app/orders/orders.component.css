@@ -33,8 +33,6 @@ ul {
 }
 
 @media (max-width: 767) {
-    /* your custom css class on a parent will increase specificity */
-    /* so this rule will override Bootstrap's font size setting */
     .label {
         font-size: 14px;
     }
