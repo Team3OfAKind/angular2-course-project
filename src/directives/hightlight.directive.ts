@@ -21,5 +21,3 @@ export class HighlightDirective {
     this.el.nativeElement.style.backgroundColor = color;
   }
 }
-
-// #5383D3;
