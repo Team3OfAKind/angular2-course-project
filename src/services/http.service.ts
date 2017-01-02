@@ -28,7 +28,6 @@ export class HttpService {
         const options = this.getRequestOptions();
         return this.http.put(`${this.host}${url}`, body, options)
             .map((res: Response) => res.json())
-            //.catch(this.handleError);
     }
 
     post(url: string, body) {
@@ -36,8 +35,6 @@ export class HttpService {
         const options = this.getRequestOptions();
         return this.http.post(`${this.host}${url}`, body, options)
             .map((res: Response) => res.json())
-            //.catch(this.handleError);
-            
     }
 
     private getRequestOptions(): RequestOptions {

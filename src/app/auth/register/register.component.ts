@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
+  nameRegex = '^[A-Z]([a-z]?)+$';
+  usernameAndPasswordRegex = '[a-zA-Z0-9]{5,15}';
   public userToRegister: FormGroup;
   options: Object;
 
@@ -22,12 +24,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.userToRegister = this.fb.group({
-      username: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)])],
-      firstName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)])],
-      lastName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)])],
-      email: ['', Validators.required],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      confirmedPassword: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
+      username: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(this.usernameAndPasswordRegex)])],
+      firstName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(this.nameRegex)])],
+      lastName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(this.nameRegex)])],
+      email: ['', Validators.compose([Validators.required, Validators.pattern(this.emailRegex)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.pattern(this.usernameAndPasswordRegex)])],
+      confirmedPassword: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.pattern(this.usernameAndPasswordRegex)])]
     });
 
     this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };

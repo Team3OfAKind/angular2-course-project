@@ -24,7 +24,7 @@ export class MealFavouriteComponent implements OnInit {
 
     ngOnInit() {
         if (this.user) {
-            this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);           
+            this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
         }
         this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
     }
@@ -34,16 +34,33 @@ export class MealFavouriteComponent implements OnInit {
             .subscribe((res) => {
                 this.notification.success('', res.result.message);
                 this.isInCart = true;
+            },
+            error => {
+                const errorRes = error.json();
+                if (errorRes.error) {
+                    this.notification.error('', errorRes.error.message);
+                } else {
+                    this.notification.error('', 'The meal could not be added to cart.');
+                }
             });
     }
 
     dislike() {
-      console.log(this.meal);
+        console.log(this.meal);
         this.mealsService.changeLike('dislike', this.meal)
-            .subscribe(res => {
-                this.notification.success('', res.message); 
-                console.log(this.index);             
-                this.onDislike.emit({index: this.index});
+            .subscribe(
+            res => {
+                this.notification.success('', res.message);
+                console.log(this.index);
+                this.onDislike.emit({ index: this.index });
+            },
+            error => {
+                const errorRes = error.json();
+                if (errorRes.error) {
+                    this.notification.error('', errorRes.error.message);
+                } else {
+                    this.notification.error('', 'There was an error and the meal status could not be changed.');
+                }
             });
     }
 }

@@ -12,6 +12,8 @@ import { User } from '../../models/user-model';
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
+  emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
+  nameRegex = '^[A-Z]([a-z]?)+$';
   user: User;
   userInformation: FormGroup;
   options: Object;
@@ -24,9 +26,9 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit() {
     this.userInformation = this.fb.group({
-      firstName: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
-      lastName: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
-      email: ['', Validators.required]
+      firstName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.pattern(this.nameRegex)])],
+      lastName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.pattern(this.nameRegex)])],
+      email: ['', Validators.compose([Validators.required, Validators.pattern(this.emailRegex)])]
     });
 
     this.userService.getUserProfile()
@@ -46,9 +48,18 @@ export class EditProfileComponent implements OnInit {
     console.log(this.userInformation.value);
     this.userService
       .updateUserInformation(this.userInformation.value)
-      .subscribe((res: any) => {
+      .subscribe(
+      (res: any) => {
         this.notification.success('', res.result.message);
         setTimeout(() => this.router.navigateByUrl('/profile'), 2500);
+      },
+      error => {
+        const errorRes = error.json();
+        if (errorRes.error) {
+          this.notification.error('', error.json().error.message);
+        } else {
+          this.notification.error('', 'User information could not be editted.');
+        }
       });
   }
 }

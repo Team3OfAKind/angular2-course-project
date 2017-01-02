@@ -28,8 +28,8 @@ export class MealMenuComponent implements OnInit {
             this.hasLoggedUser = true;
             this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
             this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
-            this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';            
-            
+            this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';
+
         }
         this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
     }
@@ -39,30 +39,50 @@ export class MealMenuComponent implements OnInit {
             this.hasLoggedUser = true;
             this.isInCart = this.user.cartMeals.find(m => m._id === this.meal._id);
             this.isFavourite = this.user.favouriteMeals.find(m => m._id === this.meal._id);
-            this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';            
+            this.likeButtonText = this.isFavourite ? 'Dislike' : 'Like';
         }
     }
 
     addToCart() {
         this.userService.addMealToCart(this.meal)
-            .subscribe((res) => {
+            .subscribe(
+            (res) => {
                 this.notification.success('', res.result.message);
                 this.isInCart = true;
+            },
+            error => {
+                const errorRes = error.json();
+                if (errorRes.error) {
+                    this.notification.error('', errorRes.error.message);
+                } else {
+                    this.notification.error('', 'The meal could not be added to cart.');
+                }
             });
     }
 
     changeLike() {
         this.mealsService.changeLike(this.likeButtonText.toLowerCase(), this.meal)
-            .subscribe(res => {
+            .subscribe(
+            res => {
                 // this.notification.success('', res.message);
                 console.log(res.err);
                 console.log(res.message);
                 if (this.isFavourite) {
                     this.isFavourite = false;
                     this.likeButtonText = 'Like';
+                    this.meal.likes--;
                 } else {
                     this.isFavourite = true;
                     this.likeButtonText = 'Dislike';
+                    this.meal.likes++;
+                }
+            },
+            error => {
+                const errorRes = error.json();
+                if (errorRes.error) {
+                    this.notification.error('', errorRes.error.message);
+                } else {
+                    this.notification.error('', 'There was an error and the meal status could not be changed.');
                 }
             });
     }
