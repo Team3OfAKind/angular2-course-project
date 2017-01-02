@@ -34,7 +34,14 @@ export class LoginComponent implements OnInit {
         console.log('in log in');
         this._notification.success('', res.message);
         setTimeout(() => this._router.navigateByUrl('/home'), 2500);
-
+      },
+      error => {
+        const errorRes = error.json();
+        if (errorRes.error) {
+          this._notification.error('', error.json().error.message);
+        } else {
+          this._notification.error('', 'Login unsuccessful');
+        }
       });
   }
 }

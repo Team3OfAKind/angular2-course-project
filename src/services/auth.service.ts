@@ -29,13 +29,14 @@ export class AuthService {
 
     login(userToLogin: Object): Observable<any> {
         let result = this.httpService.post('auth/login', userToLogin);
-        result.subscribe(res => {
-            this.storage.setUsername(res.user.username);
-            this.storage.setToken(res.user.token);
-            this.hasLoggedIn.next(true);
-        });
+        result.subscribe(
+            res => {
+                this.storage.setUsername(res.user.username);
+                this.storage.setToken(res.user.token);
+                this.hasLoggedIn.next(true);
+            },
+            error => {});
         return result;
-
     }
 
     logout(): void {

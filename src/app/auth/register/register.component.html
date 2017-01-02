@@ -92,7 +92,7 @@
                         <input type="password" name="form-confirm-password" placeholder="Confirm password..." class="form-confirm-password form-control" id="form-confirm-password" formControlName="confirmedPassword">
                         <span class="text-danger" *ngIf="!userToRegister.controls['confirmedPassword'].valid && userToRegister.controls['confirmedPassword'].touched">Password must be at least 4 symbols</span>
                     </div>
-                    <button type="submit" class="btn btn-default regbutton">Sign me up!</button>
+                    <button [disabled]="!registrationForm.valid" type="submit" class="btn btn-default regbutton">Sign me up!</button>
                 </form>
                 <simple-notifications [options]="options "></simple-notifications>
             </div>
