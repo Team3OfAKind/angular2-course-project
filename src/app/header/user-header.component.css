@@ -17,6 +17,12 @@ li a:hover,
     text-shadow: none;
 }
 
+li a.active {
+    color: black;
+    text-shadow: none;
+    background-color: bisque;
+}
+
 .logout {
     cursor: pointer;
 }

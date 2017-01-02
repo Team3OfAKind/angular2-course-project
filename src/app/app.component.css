@@ -166,6 +166,12 @@ header {
     text-shadow: none;
 }
 
+.navbar-inverse .navbar-nav li a.active {
+    color: black;
+    text-shadow: none;
+    background-color: bisque;
+}
+
 
 /* ==========================================================================
     04. Services 

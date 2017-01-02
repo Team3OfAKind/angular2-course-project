@@ -21,13 +21,13 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li [myHighlight]="color"><a routerLink="home">Home</a></li>
-                    <li [myHighlight]="color"><a routerLink="menu">Menu</a></li>
-                    <li [myHighlight]="color"><a routerLink="contacts">Contacts</a></li>
-                    <li [myHighlight]="color"><a routerLink="about">About</a></li>
-                    <li [myHighlight]="color"><a routerLink="gallery">Gallery</a></li>
+                    <li [myHighlight]="color"><a routerLink="home" routerLinkActive="active">Home</a></li>
+                    <li [myHighlight]="color"><a routerLink="menu" routerLinkActive="active">Menu</a></li>
+                    <li [myHighlight]="color"><a routerLink="contacts" routerLinkActive="active">Contacts</a></li>
+                    <li [myHighlight]="color"><a routerLink="about" routerLinkActive="active">About</a></li>
+                    <li [myHighlight]="color"><a routerLink="gallery" routerLinkActive="active">Gallery</a></li>
                     <user-header></user-header>
-                    
+
                     <!--fix for scroll spy active menu element-->
                     <li style="display:none;">
                         <a href="/home"></a>
