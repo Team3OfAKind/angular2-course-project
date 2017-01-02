@@ -10,12 +10,5 @@ export interface User {
     addresses: [{
         street: string,
         city: string
-    }]
-
-    // constructor(
-    //     public username: string,
-    //     public email: string,
-    //     public password: string,
-    //     public confirmedPassword: string
-    // ) { }
+    }];
 }

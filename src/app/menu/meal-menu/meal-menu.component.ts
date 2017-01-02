@@ -64,9 +64,6 @@ export class MealMenuComponent implements OnInit {
         this.mealsService.changeLike(this.likeButtonText.toLowerCase(), this.meal)
             .subscribe(
             res => {
-                // this.notification.success('', res.message);
-                console.log(res.err);
-                console.log(res.message);
                 if (this.isFavourite) {
                     this.isFavourite = false;
                     this.likeButtonText = 'Like';

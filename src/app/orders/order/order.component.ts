@@ -52,7 +52,7 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
     this.displayDetails = false;
-    this.buttonText = 'Show details'
+    this.buttonText = 'Show details';
   }
 
   toggleDetails() {

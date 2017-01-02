@@ -46,22 +46,22 @@ export class OrdersComponent implements OnInit {
               break;
             }
           }
-          if (i === -1) { //all orders are active
+          if (i === -1) {
             this.activeOrders = this.pastOrders;
             this.pastOrders = [];
             this.haveActiveOrders = true;
-          } else if (i < pastOrdersCount) { //some orders are active and some are past
+          } else if (i < pastOrdersCount) {
             this.activeOrders = this.pastOrders.splice(i, pastOrdersCount - i);
             this.haveActiveOrders = true;
             this.havePastOrders = true;
-          } else { //all orders are past
+          } else {
             this.havePastOrders = true;
           }
         }
         this.pastOrders.reverse();
         this.activeOrders.reverse();
         const pages = Math.ceil(this.pastOrders.length / this.pageSize);
-        this.numberOfPages = Array(pages).fill(0).map((x,i)=>i+1);    
+        this.numberOfPages = Array(pages).fill(0).map((x, i) => i + 1);
       });
   }
 

@@ -42,8 +42,6 @@ export class MenuComponent implements OnInit {
       .subscribe(res => {
         this.meals = res.result.meals;
         this.categories = [];
-
-        // TODO: Optimize this!!
         this.route.params
           .subscribe((params: Params) => this.category = params['category']);
 

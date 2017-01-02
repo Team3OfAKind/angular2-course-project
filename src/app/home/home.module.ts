@@ -11,4 +11,5 @@ import { HomeComponent } from './home.component';
   exports: [],
   providers: []
 })
+
 export class HomeModule { }

@@ -7,7 +7,7 @@ import { PaginatePipe} from '../../pipes/paginate.pipe';
 
 @NgModule({
   declarations: [
-    OrdersComponent, 
+    OrdersComponent,
     OrderComponent,
     PaginatePipe],
   imports: [

@@ -30,8 +30,6 @@ ul {
     background-color: #51d466 !important;
 }
 
-.pricing {}
-
 .pricing .pricing-item {
     position: relative;
     margin-top: 40px;
@@ -59,8 +57,6 @@ ul {
     margin-bottom: 8px;
     font-size: 22px;
 }
-
-.pricing .pricing-item .pricing-item-details p {}
 
 .pricing .pricing-item .pricing-item-details a.btn {
     margin-top: 10px;

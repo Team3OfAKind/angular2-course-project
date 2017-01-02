@@ -21,7 +21,6 @@ export class AddressComponent implements OnInit {
   constructor(private UserService: UserService) { }
 
   ngOnInit() {
-    
   }
 
   useAddress() {

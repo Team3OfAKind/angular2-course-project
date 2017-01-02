@@ -3,7 +3,7 @@ import { Component, OnInit, Input,
   state,
   style,
   transition,
-  animate, 
+  animate,
   keyframes } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { InfoService } from '../../services/info.service';
@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit {
         let moto = this.info.moto;
         let sentences = moto.split('.');
         this.info.moto = {
-          first: sentences[0] + ".",
+          first: sentences[0] + '.',
           second: sentences[1].substr(1)
-        }
+        };
       });
   }
 
