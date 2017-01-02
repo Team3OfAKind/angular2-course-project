@@ -11,7 +11,7 @@ import { NotificationsService } from 'angular2-notifications';
 @Component({
   selector: 'app-submit',
   templateUrl: './submit.component.html',
-  styleUrls: ['./submit.component.css']
+  styleUrls: ['../app.component.css','./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
 
