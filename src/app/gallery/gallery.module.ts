@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {GalleryComponent} from './gallery.component';
-import {ZoomImageDirective} from '../../directives/zoom-image.directive';
+import {ZoomInImageDirective} from '../../directives/zoom-in-image.directive';
+import {ZoomOutImageDirective} from '../../directives/zoom-out-image.directive';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    ZoomImageDirective,
+    ZoomInImageDirective,
+    ZoomOutImageDirective,
     GalleryComponent
   ]
 })

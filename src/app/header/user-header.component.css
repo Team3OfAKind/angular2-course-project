@@ -20,7 +20,7 @@ li a:hover,
 li a.active {
     color: black;
     text-shadow: none;
-    background-color: bisque;
+    background-color: rgba(255, 228, 196, 0.6);
 }
 
 .logout {

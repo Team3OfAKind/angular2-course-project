@@ -169,7 +169,7 @@ header {
 .navbar-inverse .navbar-nav li a.active {
     color: black;
     text-shadow: none;
-    background-color: bisque;
+    background-color: rgba(255, 228, 196, 0.6);
 }
 
 
