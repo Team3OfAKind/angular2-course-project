@@ -11,6 +11,7 @@ export class SearchPipe implements PipeTransform{
         }
 
         searchWord = searchWord.toLowerCase();
+
         return meals.filter(meal=>{
             return meal.name.toLowerCase().indexOf(searchWord) >= 0||
                 meal.category.toLowerCase().indexOf(searchWord) >= 0 ||

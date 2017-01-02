@@ -17,9 +17,6 @@ export class SortPipe implements PipeTransform {
             order = -1;
         }
 
-        console.log(sortType);
-        console.log(typeof meals[0][sortType]);
-        
         return meals.sort((x, y) => {
             let result;
             if (typeof x[sortType] === 'number') {

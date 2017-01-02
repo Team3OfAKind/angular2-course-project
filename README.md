@@ -1,31 +1,56 @@
-# Public
+# Paradise Restaurant
+_Single-page Applications with Angular 2_
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+Visit it at:
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Documentation
 
-## Code scaffolding
+### Routes
+- Public part
+    1. home
+    1. menu/:category
+    1. about
+    1. contacts
+    1. gallery
+    1. login
+    1. register
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+- Private part
+    1. profile 
+    1. profile/edit    
+    1. cart
+    1. orders
+    1. submit
+    1. submit/add-address
+    1. menu/:category - additional functionality
 
-## Build
+### Pipes
+1. Filter by category
+1. Search meals
+1. Sort meals
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Directives
+1. Zoom gallery image
 
-## Running unit tests
+### Gaurds
+1. Auth gaurd
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Partial components
+1. Header
+1. User panel header
+1. Footer
+1. Meal in menu
+1. Meal in cart
+1. Favourite meal in profile
+1. Address in submit page
+1. Animation
+1. Order
+1. 
 
-## Running end-to-end tests
+### Back-end
+Node.js server
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+https://github.com/Team3OfAKind/course-project-back-end
 
-## Deploying to Github Pages
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
 
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
