@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       error => {
         const errorRes = error.json();
         if (errorRes.error) {
-          this._notification.error('', error.json().error.message);
+          this._notification.error('', errorRes.error.message);
         } else {
           this._notification.error('', 'Login unsuccessful');
         }

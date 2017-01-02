@@ -64,11 +64,11 @@ ul {
 
 .pricing .pricing-item .pricing-item-details p {}
 
-.pricing .pricing-item .pricing-item-details a.btn {
+.pricing .pricing-item .pricing-item-details button.btn {
     margin-top: 10px;
 }
 
-.pricing .pricing-item .pricing-item-details a.view-link {
+.pricing .pricing-item .pricing-item-details h3.view-link {
     display: inline-block;
     margin-top: 7px;
     font-size: 12px;
@@ -92,7 +92,7 @@ ul {
     .pricing .pricing-item .pricing-item-details {
         margin-left: 0;
     }
-    .pricing .pricing-item a img {
+    .pricing .pricing-item img {
         float: none;
         margin-bottom: 30px;
     }

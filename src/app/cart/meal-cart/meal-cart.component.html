@@ -21,16 +21,16 @@
 
                 <div class="pricing-item">
 
-                    <a href="/"><img [src]="meal.imageLink" [alt]="meal.name" class="img-responsive img-thumbnail"></a>
+                    <img [src]="meal.imageLink" [alt]="meal.name" class="img-responsive img-thumbnail">
 
                     <div class="pricing-item-details">
 
-                        <h3><a href="/">{{meal.name}}</a></h3>
+                        <h3><a>{{meal.name}}</a></h3>
                         <div class="quantity">
                             Quantity:
                             <input type="number" name="quantity" [value]="meal.quantity" (change)="updateQuantity($event)" min="1" max="999">
                         </div>
-                        <a *ngIf="!isInCart" class="btn btn-danger" (click)="removeFromCart()">Remove from cart</a>
+                        <button *ngIf="!isInCart" class="btn btn-danger" (click)="removeFromCart()">Remove from cart</button>
                         <simple-notifications [options]="options "></simple-notifications>
                         <div class="clearfix"></div>
                     </div>

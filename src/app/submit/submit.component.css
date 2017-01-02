@@ -32,6 +32,10 @@ ul {
     display: inline-block;
 }
 
+.address {
+    display: inline-block;
+}
+
 .wrapper {
     text-align: left;
     padding: 10px 20px;

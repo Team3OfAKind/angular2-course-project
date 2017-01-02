@@ -18,7 +18,7 @@ export class OrdersComponent implements OnInit {
   haveActiveOrders: boolean;
 
   currentPage: number;
-  pageSize: number;;
+  pageSize: number;
   numberOfPages: number[];
 
   constructor(private UserService: UserService) { 
@@ -60,8 +60,8 @@ export class OrdersComponent implements OnInit {
         }
         this.pastOrders.reverse();
         this.activeOrders.reverse();
-        this.numberOfPages = Array(this.pastOrders.length).fill(0).map((x,i)=>i+1);;
-        
+        const pages = Math.ceil(this.pastOrders.length / this.pageSize);
+        this.numberOfPages = Array(pages).fill(0).map((x,i)=>i+1);    
       });
   }
 

@@ -26,8 +26,8 @@ export class AddAddressComponent implements OnInit {
 
   ngOnInit() {
     this.addressToAdd = this.fb.group({
-      'street': ['', Validators.compose([Validators.required, Validators.minLength(10)])],
-      'city': ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      'street': ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(30)])],
+      'city': ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(15)])],
     });
 
     this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };
@@ -42,6 +42,14 @@ export class AddAddressComponent implements OnInit {
           this._router.navigateByUrl('/submit');
           this.AddressService.AddAddress(this.addedAddress);
           }, 1000);
-      })
+      },
+      error => {
+        const errorRes = error.json();
+        if (errorRes.error) {
+          this.notification.error('', errorRes.error.message);
+        } else {
+          this.notification.error('', 'Failed to add address');
+        }
+      });
   }
 }

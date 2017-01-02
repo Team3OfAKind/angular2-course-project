@@ -89,6 +89,14 @@ export class SubmitComponent implements OnInit {
       .subscribe(res => {
         this._notification.success('', res.result.message); 
         setTimeout(() => this._router.navigateByUrl('/orders'), 2500);
+      },
+      error => {
+        const errorRes = error.json();
+        if (errorRes.error) {
+          this._notification.error('', errorRes.error.message);
+        } else {
+          this._notification.error('', 'Failed to place order');
+        }
       });
   }
 }
