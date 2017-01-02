@@ -162,8 +162,7 @@ header {
 
 .navbar-inverse .navbar-nav li a:hover,
 .navbar-inverse .navbar-nav .active>a {
-    background-color: #5383D3;
-    color: white;
+    color: black;
     text-shadow: none;
 }
 

@@ -13,8 +13,7 @@ li a {
 
 li a:hover,
 .active>a {
-    background-color: #5383D3;
-    color: white;
+    color: black;
     text-shadow: none;
 }
 
