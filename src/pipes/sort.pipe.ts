@@ -9,9 +9,7 @@ export class SortPipe implements PipeTransform {
         if (!meals) {
             return null;
         }
-        
-        console.log(sortType);
-        console.log(sortOrder);
+
         sortType = sortType.toLowerCase();
         sortOrder = sortOrder.toLowerCase();
         let order = 1;
@@ -19,16 +17,15 @@ export class SortPipe implements PipeTransform {
             order = -1;
         }
 
+        console.log(sortType);
+        console.log(typeof meals[0][sortType]);
+        
         return meals.sort((x, y) => {
             let result;
-            if (typeof x[sortType] === 'number'){
+            if (typeof x[sortType] === 'number') {
                 result = x[sortType] - y[sortType];
-            // }else if(sortType === 'price'){
-            //     let priceX = + x[sortType].split(' ')[0];
-            //     let priceY = + y[sortType].split(' ')[0];
-            //     result = priceX - priceY;
             }
-            else{
+            else {
                 result = x[sortType].localeCompare(y[sortType]);
             }
 

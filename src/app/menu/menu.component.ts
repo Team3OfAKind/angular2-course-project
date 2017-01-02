@@ -33,7 +33,6 @@ export class MenuComponent implements OnInit {
     this.sortTypes = ['Name', 'Price', 'Likes'];
     this.sortOrders = ['Ascending', 'Descending'];
     this.searchWord = '';
-    // this.currentCategory = 'All';
     this.sortType = this.sortTypes[0];
     this.sortOrder = this.sortOrders[0];
   }
