@@ -57,6 +57,7 @@
                                         <meal-menu class="container " *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder; " [meal]="meal " [user]="user ">
                                         </meal-menu>
                                     </li>
+                                    <simple-notifications [options]="options "></simple-notifications>
                                 </ul>
                             </div>
                         </div>

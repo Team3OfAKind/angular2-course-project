@@ -32,7 +32,7 @@
                             <a *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</a>
                             <a class="btn" [ngClass]="{'btn-success': !isFavourite, 'btn-warning': isFavourite}" (click)="changeLike()">{{likeButtonText}}</a>
                         </div>
-                        <simple-notifications [options]="options "></simple-notifications>
+                        <!--<simple-notifications [options]="options "></simple-notifications>-->
                         <div class="clearfix"></div>
                     </div>
                     <!--price tag-->
