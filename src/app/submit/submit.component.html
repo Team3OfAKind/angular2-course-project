@@ -43,7 +43,7 @@
         <div class="wrapper">
             <div class="info pricing-item-details" *ngFor="let meal of cartMeals; let i = index">
                 <h3>{{meal.name}}</h3>
-                <p><strong>Meal price: </strong>{{meal.price}} lv.</p>
+                <p><strong>Meal price: </strong>{{meal.price.toFixed(2)}} lv.</p>
                 <p><strong>Quantity: </strong>{{meal.quantity}}</p>
                 <div class="clearfix"></div>
             </div>
