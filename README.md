@@ -7,22 +7,22 @@ Visit it at:
 
 ### Routes
 - Public part
-    1. home
-    1. menu/:category
-    1. about
-    1. contacts
-    1. gallery
-    1. login
-    1. register
+    - home
+    - menu/:category
+    - about
+    - contacts
+    - gallery
+    - login
+    - register
 
 - Private part
-    1. profile 
-    1. profile/edit    
-    1. cart
-    1. orders
-    1. submit
-    1. submit/add-address
-    1. menu/:category - additional functionality
+    - profile 
+    - profile/edit    
+    - cart
+    - orders
+    - submit
+    - submit/add-address
+    - menu/:category - additional functionality
 
 ### Pipes
 1. Filter by category
@@ -30,7 +30,9 @@ Visit it at:
 1. Sort meals
 
 ### Directives
-1. Zoom gallery image
+1. Zoom in gallery image
+2. Zoom out gallery image
+3. Change color of header link on hover
 
 ### Gaurds
 1. Auth gaurd

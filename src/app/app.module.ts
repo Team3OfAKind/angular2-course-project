@@ -30,6 +30,8 @@ import {StorageService} from '../services/storage.service';
 import {LoadingAnimateService} from '../services/loading.service';
 import {InfoService} from '../services/info.service';
 
+import { HighlightDirective } from '../directives/hightlight.directive';
+
 import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 import { appRoutes } from './app.routes';
@@ -43,6 +45,7 @@ import { appRoutes } from './app.routes';
     HeaderComponent,
     UserHeaderComponent,
     FooterComponent,
+    HighlightDirective
     // LoginFormComponent,
     // RegisterFormComponent
   ],

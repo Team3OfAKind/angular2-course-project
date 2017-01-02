@@ -13,9 +13,14 @@ li a {
 
 li a:hover,
 .active>a {
-    background-color: #5383D3;
-    color: white;
+    color: black;
     text-shadow: none;
+}
+
+li a.active {
+    color: black;
+    text-shadow: none;
+    background-color: rgba(255, 228, 196, 0.6);
 }
 
 .logout {

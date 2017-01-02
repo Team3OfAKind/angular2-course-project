@@ -1,9 +1,9 @@
 <ul class="nav navbar-nav navbar-right">
-    <li *ngIf="!isLoggedIn"><a routerLink="login">Login</a></li>
-    <li *ngIf="!isLoggedIn"><a routerLink="register">Register</a></li>
+    <li [highlight-link]="color" *ngIf="!isLoggedIn"><a routerLink="login" routerLinkActive="active">Login</a></li>
+    <li [highlight-link]="color" *ngIf="!isLoggedIn"><a routerLink="register" routerLinkActive="active">Register</a></li>
 
-    <li *ngIf="isLoggedIn"><a routerLink="cart">Cart</a></li>
-    <li *ngIf="isLoggedIn"><a routerLink="orders">Orders</a></li>
-    <li *ngIf="isLoggedIn"><a routerLink="profile">Profile</a></li>
-    <li *ngIf="isLoggedIn"><a class="logout" (click)="logout()">Logout</a></li>
+    <li [highlight-link]="color" *ngIf="isLoggedIn"><a routerLink="cart" routerLinkActive="active">Cart</a></li>
+    <li [highlight-link]="color" *ngIf="isLoggedIn"><a routerLink="orders" routerLinkActive="active">Orders</a></li>
+    <li [highlight-link]="color" *ngIf="isLoggedIn"><a routerLink="profile" routerLinkActive="active">Profile</a></li>
+    <li [highlight-link]="color" *ngIf="isLoggedIn"><a class="logout" (click)="logout()" routerLinkActive="active">Logout</a></li>
 </ul>

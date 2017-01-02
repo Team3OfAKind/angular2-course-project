@@ -28,6 +28,7 @@
                         <h3><a href="/">{{meal.name}}</a></h3>
 
                         <p>{{meal.description}}</p>
+                        <p>{{meal.likes}} customers liked it!</p>
                         <div *ngIf="hasLoggedUser" class="buttons">
                             <a *ngIf="!isInCart" class="btn btn-danger" (click)="addToCart()">Add to cart</a>
                             <a class="btn" [ngClass]="{'btn-success': !isFavourite, 'btn-warning': isFavourite}" (click)="changeLike()">{{likeButtonText}}</a>
