@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="pricing-item">
-                    <a href="/"><img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive img-thumbnail"></a>
+                    <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive img-thumbnail">
                     <div class="pricing-item-details">
-                        <h3><a href="/">{{meal.name}}</a></h3>
+                        <h3>{{meal.name}}</h3>
                         <p>{{meal.description}}</p>
                         <p>{{meal.likes}} customers liked it!</p>
                         <div *ngIf="hasLoggedUser" class="buttons">
