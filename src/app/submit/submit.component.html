@@ -59,15 +59,15 @@
                     </div>
                 </div>
                 <div class="total-price">
-                    <p>Total price:</p>
+                    <p class="total">Total price:</p>
                     <span>{{totalPrice}} lv.</span>
-                    <div><strong>Deliver to:</strong>
+                    <div class="deliver-to"><strong>Deliver to:</strong>
                         <div *ngIf="isAddressSelected">
                             <p><strong>Address:</strong> {{selectedAddress.street}} <strong>City:</strong> {{selectedAddress.city}}</p>
                             <button class="btn btn-primary" (click)="placeOrder()">Place order</button>
                         </div>
                         <div *ngIf="!isAddressSelected">
-                            <p>Please, select address </p>
+                            <p class="select">Please, select address </p>
                         </div>
                     </div>
                 </div>

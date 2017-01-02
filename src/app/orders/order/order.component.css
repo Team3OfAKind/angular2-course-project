@@ -1,12 +1,25 @@
-img {
-    height: 120px;
-    display: inline-block;
+.order {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(54, 65, 76, 0.6);
+    border-bottom: 50%;
+}
+
+.order p {
+    font-size: 18px;
 }
 
 .meal-info {
     display: inline-block;
+    margin: 15px;
 }
 
 ul {
     list-style-type: none;
+}
+
+.img-responsive {
+    height: 120px;
+    display: inline-block;
+    border: 1px solid rgba(54, 65, 76, 0.6);
 }

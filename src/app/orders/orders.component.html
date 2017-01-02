@@ -1,25 +1,63 @@
-<div class="wrapper">
-  <div class="orders">
-    <div *ngIf="haveOrders">
-      <div *ngIf="haveActiveOrders">
-        <h3>Active Orders</h3>
-        <ul>
-        <app-order *ngFor="let order of activeOrders"
-        [order]="order">
-        </app-order>
-        </ul>
-      </div>
-      <div *ngIf="havePastOrders">
-        <h3>Past Orders</h3>
-        <ul>
-        <app-order *ngFor="let order of pastOrders"
-        [order]="order">
-        </app-order>
-        </ul>
-      </div>
+<!--<div class="wrapper">
+    <div class="orders">
+        <div *ngIf="haveOrders">
+            <div *ngIf="haveActiveOrders">
+                <h3>Active Orders</h3>
+                <ul>
+                    <app-order *ngFor="let order of activeOrders" [order]="order">
+                    </app-order>
+                </ul>
+            </div>
+            <div *ngIf="havePastOrders">
+                <h3>Past Orders</h3>
+                <ul>
+                    <app-order *ngFor="let order of pastOrders" [order]="order">
+                    </app-order>
+                </ul>
+            </div>
+        </div>
+        <div *ngIf="!haveOrders">
+            <p>You have no orders.</p>
+        </div>
     </div>
-    <div *ngIf="!haveOrders">
-      <p>You have no orders.</p>
+</div>-->
+
+
+<div class="container main-container">
+    <h2 class="section-title text-center">Orders</h2>
+    <p class="lead main text-center"></p>
+    <div id="food-menu " class="light-wrapper ">
+        <section class="ss-style-top "></section>
+        <div class="wrapper">
+            <div class="orders">
+                <div *ngIf="haveOrders" class="order-box">
+                    <div *ngIf="haveActiveOrders">
+                        <span class="label label-success">Active orders</span>
+                        <ul>
+                            <app-order *ngFor="let order of activeOrders" [order]="order">
+                            </app-order>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <section class="ss-style-bottom "></section>
+        </div>
     </div>
-  </div>
+    <div id="food-menu " class="light-wrapper ">
+        <section class="ss-style-top "></section>
+        <div class="wrapper">
+            <div class="orders">
+                <div *ngIf="haveOrders" class="order-box">
+                    <div *ngIf="havePastOrders">
+                        <span class="label label-warning">Passed orders</span>
+                        <ul>
+                            <app-order *ngFor="let order of pastOrders" [order]="order">
+                            </app-order>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <section class="ss-style-bottom "></section>
+        </div>
+    </div>
 </div>

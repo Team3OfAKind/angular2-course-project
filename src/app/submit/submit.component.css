@@ -415,7 +415,6 @@ button.btn.active:focus {
 .pricing-item-details p,
 .pricing .lead {
     color: rgb(54, 65, 76);
-    font-weight: bold;
 }
 
 .pricing .pricing-item .pricing-item-details {
@@ -425,7 +424,7 @@ button.btn.active:focus {
 .pricing .pricing-item .pricing-item-details h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .pricing .pricing-item .pricing-item-details p {}
@@ -476,11 +475,8 @@ input[type=number]::-webkit-inner-spin-button {
     display: inline-block;
 }
 
-.total-price {
-    text-align: center;
-}
-
-.total-price p {
+.total-price .total  {
+    margin: 10px;
     display: inline-block;
     font-size: 22px;
     font-weight: bold;
@@ -507,7 +503,18 @@ strong {
 }
 
 .quantity {
-    font-size: 14px;
+    font-size: 18px;
+    color: darkred;
+}
+
+.deliver-to {
+    text-align: left;
     font-weight: bold;
+    font-size: 18px;
+}
+
+.select {
+    font-size: 18px;
+    font-weight: normal;
     color: darkred;
 }
