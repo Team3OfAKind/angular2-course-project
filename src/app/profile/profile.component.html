@@ -33,7 +33,7 @@
         <section class="ss-style-top "></section>
         <div class="col-wrapper">
             <div class="icon-wrapper">
-                <img alt="profile image" [src]="user?.image">
+                <img  *ngIf="user" alt="profile image" [src]="user.image">
             </div>
             <div class="info">
                 <h2>{{user?.firstName}} {{user?.lastName}}</h2>

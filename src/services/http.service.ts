@@ -17,21 +17,18 @@ export class HttpService {
     }
 
     get(url: string) {
-        console.log(`${this.host}${url}`);
         const options = this.getRequestOptions();
         return this.http.get(`${this.host}${url}`, options)
             .map((res: Response) => res.json());
     }
 
     put(url: string, body) {
-        console.log(`put: ${this.host}${url}`);
         const options = this.getRequestOptions();
         return this.http.put(`${this.host}${url}`, body, options)
             .map((res: Response) => res.json())
     }
 
     post(url: string, body) {
-        console.log(`post: ${this.host}${url}`);
         const options = this.getRequestOptions();
         return this.http.post(`${this.host}${url}`, body, options)
             .map((res: Response) => res.json())
@@ -48,8 +45,7 @@ export class HttpService {
 
     private handleError(error: Response | any) {
         let message: string;
-        console.log(error);
-        console.log(error.json());
+ 
         if (error instanceof Response) {
                message = error.json().error.message;
         } else {

@@ -55,12 +55,15 @@ export class MenuComponent implements OnInit {
         });
       });
 
-    this.userService.getUserProfile()
-      .subscribe(
-      res => {
-        this.user = res.result.user;
-      },
-      err => { });
+    if (this.userService.isLoggedIn()) {
+      this.userService.getUserProfile()
+        .subscribe(
+        res => {
+          this.user = res.result.user;
+        });
+    } else {
+      this.user = null;
+    }
 
 
     this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };

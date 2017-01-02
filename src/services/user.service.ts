@@ -1,24 +1,28 @@
-import {HttpService} from './http.service';
-import {Injectable} from '@angular/core';
-
+import { HttpService } from './http.service';
+import { Injectable } from '@angular/core';
+import { StorageService } from './storage.service';
 
 @Injectable()
-export class UserService{
+export class UserService {
     private route: string;
 
-    constructor(private httpService: HttpService) {
+    constructor(private httpService: HttpService, private storage: StorageService) {
         this.route = `users`;
     }
 
-    getUserProfile(){
-        return this.httpService.get(this.route+'/profile');
+    isLoggedIn() {
+        return (this.storage.getUsername() && this.storage.getAuthtoken());
     }
 
-    updateUserInformation(newInformation){
-        return this.httpService.put(this.route+'/profile/edit', newInformation);
-    }  
+    getUserProfile() {
+        return this.httpService.get(this.route + '/profile');
+    }
 
-    getCartMeals(){
+    updateUserInformation(newInformation) {
+        return this.httpService.put(this.route + '/profile/edit', newInformation);
+    }
+
+    getCartMeals() {
         return this.httpService.get(this.route + '/cart');
     }
 
@@ -29,7 +33,7 @@ export class UserService{
     }
 
     updateMealCartQuantity(name, changeBy) {
-        return this.httpService.post(this.route + '/cart/update', {name, changeBy});
+        return this.httpService.post(this.route + '/cart/update', { name, changeBy });
     }
 
     removeMealFromCart(meal) {

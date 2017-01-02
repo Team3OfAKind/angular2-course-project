@@ -46,13 +46,11 @@ export class MealFavouriteComponent implements OnInit {
     }
 
     dislike() {
-        console.log(this.meal);
         this.mealsService.changeLike('dislike', this.meal)
             .subscribe(
             res => {
                 this.notification.success('', res.message);
-                console.log(this.index);
-                this.onDislike.emit({ index: this.index });
+                 this.onDislike.emit({ index: this.index });
             },
             error => {
                 const errorRes = error.json();
