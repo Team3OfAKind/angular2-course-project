@@ -635,6 +635,7 @@ footer {
     }
     .navbar-nav>li {
         display: inline-block;
+        float: none;
     }
     #logo {
         position: absolute;
