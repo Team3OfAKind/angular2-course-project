@@ -14,6 +14,10 @@
     margin-bottom: 15px;
 }
 
+.section-title.text-center {
+    padding-top: 150px;
+}
+
 img {
     height: 100px;
     display: inline-block;
@@ -60,14 +64,16 @@ ul {
     float: left;
 }
 
-.navbar-nav>li:hover{
+.navbar-nav>li:hover {
     background-color: #E0E0E0;
 }
 
-/*.navbar-nav>li:checked{
+
+/*.navbar-nav>li:checked {
     background-color: #E0E0E0;
 }*/
-.navbar-nav .active{
+
+.navbar-nav .active {
     background-color: #E0E0E0;
 }
 
