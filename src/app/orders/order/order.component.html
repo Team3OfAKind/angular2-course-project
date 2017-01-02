@@ -1,4 +1,4 @@
-<li class="order" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)" [@flyInOut]="'in'">
+<li class="order" [@flyInOut]="'in'">
     <p><strong>Delivered to: </strong>{{order.address.street}}, {{order.address.city}}</p>
     <p><strong>Total price: </strong>{{order.totalPrice}} lv.</p>
     <p><strong>Ordered on: </strong>{{order.orderDateString}}</p>
