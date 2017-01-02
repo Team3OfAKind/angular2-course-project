@@ -17,7 +17,7 @@ export class ZoomInImageDirective {
         zoomedImageDiv.firstElementChild.src = img.src;
 
         let gallery = div.parentNode;
-        gallery.className += ' blurred disabled-background';
+        gallery.className += ' blurred';
     }
 }
 

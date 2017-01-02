@@ -64,6 +64,7 @@ Visit our page to learn more about our restaurant and order delicious food. You 
 ### Animations
 - Contacts page
 - Orders page
+- Home qoute
 
 ### Back-end
 Node.js server

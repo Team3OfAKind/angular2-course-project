@@ -41,7 +41,3 @@ img {
     -ms-filter: blur(10px);
     filter: blur(10px);
 }
-
-.disabled-background {
-    z-index: 100;
-}

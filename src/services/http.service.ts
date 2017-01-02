@@ -9,28 +9,28 @@ import { StorageService } from './storage.service';
 
 @Injectable()
 export class HttpService {
-    private host: string;
+    private mainRoute: string;
 
     constructor(private http: Http, private storage: StorageService) {
-        // this.host = "http://localhost:3001/api/";
-        this.host = "https://restaurant-app-api.herokuapp.com/api/";       
+        // this.mainRoute = "http://localhost:3001/api/";
+        this.mainRoute = "https://restaurant-app-api.herokuapp.com/api/";       
     }
 
     get(url: string) {
         const options = this.getRequestOptions();
-        return this.http.get(`${this.host}${url}`, options)
+        return this.http.get(`${this.mainRoute}${url}`, options)
             .map((res: Response) => res.json());
     }
 
     put(url: string, body) {
         const options = this.getRequestOptions();
-        return this.http.put(`${this.host}${url}`, body, options)
+        return this.http.put(`${this.mainRoute}${url}`, body, options)
             .map((res: Response) => res.json());
     }
 
     post(url: string, body) {
         const options = this.getRequestOptions();
-        return this.http.post(`${this.host}${url}`, body, options)
+        return this.http.post(`${this.mainRoute}${url}`, body, options)
             .map((res: Response) => res.json());
     }
 
