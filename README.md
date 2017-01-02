@@ -3,6 +3,13 @@ _Single-page Applications with Angular 2_
 
 Visit it at:
 
+## Team members
+| Name | [Student system](https://telerikacademy.com) username | [Github](https://github.com) username|
+|:----|:-----------------------|:-----------------------------|
+| Elena Zarkova  | ElenaZ      | ElenaZarkova  |
+| Silviya Boteva | sboteva1    | silweto7      |
+| Martin Yotov   | martinyotov | MartinYotov   |
+
 ## Documentation
 
 ### Routes
@@ -14,6 +21,7 @@ Visit it at:
     - gallery
     - login
     - register
+    - not found page
 
 - Private part
     - profile 
@@ -47,7 +55,7 @@ Visit it at:
 1. Address in submit page
 1. Animation
 1. Order
-1. 
+1. Loading app
 
 ### Back-end
 Node.js server

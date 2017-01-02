@@ -31,27 +31,27 @@
                                 </div>
                             </div>
                             <div class="col-sm-9 components ">
-                                    <div class="inputs">
-                                        <div class="input-group stylish-input-group">
-                                            <input type="text" [(ngModel)]="searchWord" class="form-control" placeholder="Search...">
-                                            <span class="input-group-addon">
+                                <div class="inputs">
+                                    <div class="input-group stylish-input-group">
+                                        <input type="text" [(ngModel)]="searchWord" class="form-control" placeholder="Search...">
+                                        <span class="input-group-addon">
                                             <button type="submit">
                                             <span class="glyphicon glyphicon-search"></span>
-                                            </button>
-                                            </span>
-                                        </div>
-                                        <div class="form-group ">
-                                            <label for="sort-type ">Sort by</label>
-                                            <select class="form-control " id="sort-type " [(ngModel)]="sortType ">
+                                        </button>
+                                        </span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="sort-type ">Sort by</label>
+                                        <select class="form-control " id="sort-type " [(ngModel)]="sortType ">
                                                     <option *ngFor="let type of sortTypes " [value]="type ">{{type}}</option>
                                                 </select>
-                                            <label for="sort-order ">Order in</label>
-                                            <select class="form-control " id="sort-order " [(ngModel)]="sortOrder ">
+                                        <label for="sort-order ">Order in</label>
+                                        <select class="form-control " id="sort-order " [(ngModel)]="sortOrder ">
                                                     <option *ngFor="let order of sortOrders " [value]="order ">{{order}}</option>
                                                 </select>
 
-                                        </div>
                                     </div>
+                                </div>
                                 <ul>
                                     <li style="float:left ">
                                         <meal-menu class="container " *ngFor="let meal of meals | filterByCategory:category | search:searchWord | sort:sortType:sortOrder; " [meal]="meal " [user]="user ">

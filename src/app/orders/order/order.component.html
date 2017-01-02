@@ -1,4 +1,4 @@
-<li class="order">
+<li class="order" (@flyInOut.start)="animationStarted($event)" (@flyInOut.done)="animationDone($event)" [@flyInOut]="'in'">
     <p><strong>Delivered to: </strong>{{order.address.street}}, {{order.address.city}}</p>
     <p><strong>Total price: </strong>{{order.totalPrice}} lv.</p>
     <p><strong>Ordered on: </strong>{{order.orderDateString}}</p>
@@ -9,7 +9,7 @@
             <img src="{{meal.imageLink}}" alt="meal.name" class="img-responsive">
             <div class="meal-info">
                 <strong>{{meal.name}}</strong>
-                <p>{{meal.price}} lv.</p>
+                <p>{{meal.price.toFixed(2)}} lv.</p>
                 <p>Quantity: {{meal.quantity}}</p>
             </div>
         </li>
