@@ -1,10 +1,23 @@
 <div class="wrapper">
   <div class="orders">
-    <ul *ngIf="haveOrders">
-        <app-order *ngFor="let order of orders"
+    <div *ngIf="haveOrders">
+      <div *ngIf="haveActiveOrders">
+        <h3>Active Orders</h3>
+        <ul>
+        <app-order *ngFor="let order of activeOrders"
         [order]="order">
         </app-order>
-    </ul>
+        </ul>
+      </div>
+      <div *ngIf="havePastOrders">
+        <h3>Past Orders</h3>
+        <ul>
+        <app-order *ngFor="let order of pastOrders"
+        [order]="order">
+        </app-order>
+        </ul>
+      </div>
+    </div>
     <div *ngIf="!haveOrders">
       <p>You have no orders.</p>
     </div>
