@@ -64,7 +64,10 @@ ul {
     background-color: #E0E0E0;
 }
 
-.navbar-nav>li:checked{
+/*.navbar-nav>li:checked{
+    background-color: #E0E0E0;
+}*/
+.navbar-nav .active{
     background-color: #E0E0E0;
 }
 
