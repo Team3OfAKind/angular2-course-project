@@ -51,13 +51,16 @@
                     <div *ngIf="havePastOrders">
                         <span class="label label-warning">Passed orders</span>
                         <ul>
-                            <app-order *ngFor="let order of pastOrders" [order]="order">
+                            <app-order *ngFor="let order of pastOrders | paginate:currentPage:pageSize" [order]="order">
                             </app-order>
                         </ul>
                     </div>
                 </div>
             </div>
-            <section class="ss-style-bottom "></section>
+            <div>
+                <button class="btn btn-default" *ngFor="let number of numberOfPages" (click)="changePage(number)">{{number}}</button>
+            </div>
+            <section class="ss-style-bottom "></section>       
         </div>
     </div>
 </div>

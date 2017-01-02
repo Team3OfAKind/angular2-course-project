@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Order } from '../../models/order-model';
 
@@ -17,7 +17,14 @@ export class OrdersComponent implements OnInit {
   havePastOrders: boolean;
   haveActiveOrders: boolean;
 
-  constructor(private UserService: UserService) { }
+  currentPage: number;
+  pageSize: number;;
+  numberOfPages: number[];
+
+  constructor(private UserService: UserService) { 
+    this.currentPage = 1;
+    this.pageSize = 5;
+  }
 
   ngOnInit() {
     this.UserService.getOrders()
@@ -32,27 +39,33 @@ export class OrdersComponent implements OnInit {
           let dateTime50MinsAgo = new Date();
           dateTime50MinsAgo.setMinutes(dateTime50MinsAgo.getMinutes() - 50);
 
-          for(i; i >= 0; i -= 1) {
+          for (i; i >= 0; i -= 1) {
             let orderDate = new Date(this.pastOrders[i].orderDate);
-            if(orderDate < dateTime50MinsAgo) {
+            if (orderDate < dateTime50MinsAgo) {
               i += 1;
               break;
             }
           }
-          if(i === -1){ //all orders are active
+          if (i === -1) { //all orders are active
             this.activeOrders = this.pastOrders;
-            this.haveActiveOrders = true; 
-          }else if(i < pastOrdersCount) { //some orders are active and some are past
+            this.pastOrders = [];
+            this.haveActiveOrders = true;
+          } else if (i < pastOrdersCount) { //some orders are active and some are past
             this.activeOrders = this.pastOrders.splice(i, pastOrdersCount - i);
             this.haveActiveOrders = true;
             this.havePastOrders = true;
-          }else{ //all orders are past
+          } else { //all orders are past
             this.havePastOrders = true;
           }
         }
         this.pastOrders.reverse();
         this.activeOrders.reverse();
+        this.numberOfPages = Array(this.pastOrders.length).fill(0).map((x,i)=>i+1);;
+        
       });
   }
 
+  changePage(number){
+    this.currentPage = number;
+  }
 }
