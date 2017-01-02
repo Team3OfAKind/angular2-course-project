@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(event) {
-    this.cartMeals.splice(event.index, 1);    
+    this.cartMeals.splice(event.index, 1);
     this.totalPrice -= event.price;
     this.totalPrice = +this.totalPrice.toFixed(2);
   }

@@ -24,12 +24,56 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.userToRegister = this.fb.group({
-      username: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(this.usernameAndPasswordRegex)])],
-      firstName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(this.nameRegex)])],
-      lastName: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern(this.nameRegex)])],
-      email: ['', Validators.compose([Validators.required, Validators.pattern(this.emailRegex)])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.pattern(this.usernameAndPasswordRegex)])],
-      confirmedPassword: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.pattern(this.usernameAndPasswordRegex)])]
+      username: ['',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.minLength(5),
+            Validators.maxLength(15),
+            Validators.pattern(this.usernameAndPasswordRegex)
+          ]
+        )],
+      firstName: ['',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.minLength(5),
+            Validators.maxLength(15),
+            Validators.pattern(this.nameRegex)
+          ]
+        )],
+      lastName: ['',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.minLength(5),
+            Validators.maxLength(15),
+            Validators.pattern(this.nameRegex)
+          ]
+        )],
+      email: ['',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.pattern(this.emailRegex)
+          ]
+        )],
+      password: ['',
+      Validators.compose(
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern(this.usernameAndPasswordRegex)
+        ]
+      )],
+      confirmedPassword: ['',
+      Validators.compose(
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.pattern(this.usernameAndPasswordRegex)
+        ]
+      )]
     });
 
     this.options = { timeOut: 2500, pauseOnHover: true, showProgressBar: false, animate: 'scale', position: ['right', 'top'] };

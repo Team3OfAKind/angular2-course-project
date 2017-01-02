@@ -30,7 +30,7 @@ export class MealCartComponent implements OnInit {
     this.UserService.removeMealFromCart(this.meal)
       .subscribe((res) => {
         this.onRemoveFromCart.emit({index: this.index, price: totalMealPrice});
-        this.notification.success('', res.result.message);        
+        this.notification.success('', res.result.message);
       });
   }
 
@@ -45,7 +45,6 @@ export class MealCartComponent implements OnInit {
         this.meal.quantity = event.target.value;
         let price = this.meal.price * changeBy;
         this.onQuantityChanged.emit({price});
-   
         this.notification.success('', res.result.message);
       });
   }
