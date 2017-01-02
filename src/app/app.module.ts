@@ -37,9 +37,6 @@ import {AuthGaurd} from '../gaurds/auth.gaurd';
 
 import { appRoutes } from './app.routes';
 
-// import { LoginFormComponent } from './login-form/login-form.component';
-// import { RegisterFormComponent } from './register-form/register-form.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,8 +44,6 @@ import { appRoutes } from './app.routes';
     UserHeaderComponent,
     FooterComponent,
     HighlightDirective
-    // LoginFormComponent,
-    // RegisterFormComponent
   ],
   imports: [
     BrowserModule,
