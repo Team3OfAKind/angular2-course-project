@@ -1,9 +1,13 @@
 # Paradise Restaurant
 _Single-page Applications with Angular 2_
 
-Visit it at:
+Visit it at: 
 
-**paradiserestaurant.herokuapp.com**
+**https://paradiserestaurant.herokuapp.com/**
+
+Watch our live demo in:
+
+**https://www.youtube.com/watch?v=opiYxQEFZf0**
 
 Visit our page to learn more about our restaurant and order delicious food. You can add meals to your personal favourites or directly add them to your cart. You can save a number of different addresses and see all your past orders.
 
